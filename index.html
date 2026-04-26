@@ -1,1180 +1,1424 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TKMaster — Consultoria e Sistemas</title>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --navy: #0B1D3A;
-    --navy-light: #152B52;
-    --red: #C0151A;
-    --red-light: #E01A20;
-    --red-glow: #E01A2022;
-    --white: #FFFFFF;
-    --off-white: #F5F5F3;
-    --gray: #9A9A94;
-    --gray-light: #EBEBEA;
-    --font-display: 'Barlow Condensed', sans-serif;
-    --font-body: 'Barlow', sans-serif;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: var(--font-body);
-    background: var(--off-white);
-    color: var(--navy);
-    overflow-x: hidden;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: var(--navy);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 60px;
-    height: 64px;
-    border-bottom: 2px solid var(--red);
-  }
-
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-  }
-
-  .logo-text {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 22px;
-    letter-spacing: 0.04em;
-    color: var(--white);
-    line-height: 1;
-  }
-
-  .logo-sub {
-    font-family: var(--font-display);
-    font-weight: 400;
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    color: var(--gray);
-    text-transform: uppercase;
-  }
-
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 36px;
-    list-style: none;
-  }
-
-  .nav-links a {
-    font-family: var(--font-body);
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.7);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover { color: var(--white); }
-
-  .nav-cta {
-    background: var(--red) !important;
-    color: var(--white) !important;
-    padding: 8px 20px !important;
-    border-radius: 3px;
-    opacity: 1 !important;
-    transition: background 0.2s !important;
-  }
-
-  .nav-cta:hover { background: var(--red-light) !important; }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    background: var(--navy);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 64px;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .hero-bg-lines {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-  }
-
-  .geo-circle {
-    position: absolute;
-    border-radius: 50%;
-    border: 1px solid rgba(192,21,26,0.15);
-  }
-
-  .hero-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 80px 40px 80px 80px;
-    position: relative;
-    z-index: 2;
-  }
-
-  .hero-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--font-body);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 24px;
-  }
-
-  .hero-tag::before {
-    content: '';
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--red);
-  }
-
-  .hero-title {
-    font-family: var(--font-display);
-    font-weight: 900;
-    font-size: 72px;
-    line-height: 0.92;
-    letter-spacing: -0.01em;
-    color: var(--white);
-    margin-bottom: 28px;
-    text-transform: uppercase;
-  }
-
-  .hero-title span {
-    color: var(--red);
-    display: block;
-  }
-
-  .hero-desc {
-    font-size: 16px;
-    line-height: 1.7;
-    color: rgba(255,255,255,0.6);
-    max-width: 420px;
-    margin-bottom: 48px;
-  }
-
-  .hero-actions {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-
-  .btn-primary {
-    background: var(--red);
-    color: var(--white);
-    font-family: var(--font-display);
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 14px 36px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background 0.2s;
-    text-decoration: none;
-    display: inline-block;
-  }
-
-  .btn-primary:hover { background: var(--red-light); }
-
-  .btn-outline {
-    background: transparent;
-    color: rgba(255,255,255,0.8);
-    font-family: var(--font-display);
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 14px 36px;
-    border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 3px;
-    cursor: pointer;
-    transition: all 0.2s;
-    text-decoration: none;
-    display: inline-block;
-  }
-
-  .btn-outline:hover {
-    border-color: rgba(255,255,255,0.6);
-    color: var(--white);
-  }
-
-  .hero-stats {
-    display: flex;
-    gap: 40px;
-    margin-top: 64px;
-    padding-top: 40px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-  }
-
-  .stat-num {
-    font-family: var(--font-display);
-    font-weight: 900;
-    font-size: 40px;
-    color: var(--white);
-    line-height: 1;
-  }
-
-  .stat-label {
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.45);
-    margin-top: 4px;
-  }
-
-  .hero-right {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    overflow: hidden;
-  }
-
-  .hero-card-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding: 60px 60px 60px 0;
-    width: 100%;
-    max-width: 400px;
-    position: relative;
-    z-index: 2;
-  }
-
-  .hcard {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 8px;
-    padding: 20px 24px;
-    transition: all 0.3s;
-  }
-
-  .hcard:hover {
-    background: rgba(255,255,255,0.09);
-    border-color: rgba(192,21,26,0.4);
-  }
-
-  .hcard-icon {
-    width: 36px;
-    height: 36px;
-    background: var(--red-glow);
-    border: 1px solid rgba(192,21,26,0.3);
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 12px;
-  }
-
-  .hcard-title {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 16px;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    color: var(--white);
-    margin-bottom: 6px;
-  }
-
-  .hcard-desc {
-    font-size: 13px;
-    line-height: 1.5;
-    color: rgba(255,255,255,0.5);
-  }
-
-  /* ── SECTIONS ── */
-  .section {
-    padding: 100px 80px;
-  }
-
-  .section-alt {
-    background: var(--white);
-  }
-
-  .section-dark {
-    background: var(--navy);
-    color: var(--white);
-  }
-
-  .section-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 16px;
-  }
-
-  .section-label::before {
-    content: '';
-    display: block;
-    width: 20px;
-    height: 2px;
-    background: var(--red);
-  }
-
-  .section-title {
-    font-family: var(--font-display);
-    font-weight: 900;
-    font-size: 52px;
-    line-height: 0.95;
-    text-transform: uppercase;
-    letter-spacing: -0.01em;
-    margin-bottom: 16px;
-  }
-
-  .section-sub {
-    font-size: 16px;
-    line-height: 1.7;
-    color: var(--gray);
-    max-width: 500px;
-    margin-bottom: 64px;
-  }
-
-  .dark-sub { color: rgba(255,255,255,0.5); }
-
-  /* ── STEPS ── */
-  .steps-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: var(--gray-light);
-    border: 1px solid var(--gray-light);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-
-  .step {
-    background: var(--white);
-    padding: 36px 28px;
-    position: relative;
-  }
-
-  .step-num {
-    font-family: var(--font-display);
-    font-weight: 900;
-    font-size: 64px;
-    color: var(--gray-light);
-    line-height: 1;
-    position: absolute;
-    top: 16px;
-    right: 20px;
-  }
-
-  .step-icon {
-    width: 44px;
-    height: 44px;
-    background: var(--navy);
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-
-  .step-title {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 18px;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    color: var(--navy);
-    margin-bottom: 10px;
-  }
-
-  .step-desc {
-    font-size: 13px;
-    line-height: 1.6;
-    color: var(--gray);
-  }
-
-  .step-highlight {
-    background: var(--red);
-  }
-
-  .step-highlight .step-num { color: rgba(255,255,255,0.15); }
-  .step-highlight .step-icon { background: rgba(255,255,255,0.15); }
-  .step-highlight .step-title { color: var(--white); }
-  .step-highlight .step-desc { color: rgba(255,255,255,0.7); }
-
-  /* ── SERVICES ── */
-  .services-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-
-  .service-card {
-    background: var(--off-white);
-    border: 1px solid var(--gray-light);
-    border-radius: 8px;
-    padding: 36px;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: all 0.25s;
-  }
-
-  .service-card:hover {
-    border-color: var(--red);
-    background: var(--white);
-    transform: translateY(-2px);
-  }
-
-  .service-card:hover .service-arrow {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .service-num {
-    font-family: var(--font-display);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 20px;
-  }
-
-  .service-title {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 24px;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    color: var(--navy);
-    margin-bottom: 12px;
-    line-height: 1.1;
-  }
-
-  .service-desc {
-    font-size: 14px;
-    line-height: 1.65;
-    color: var(--gray);
-    margin-bottom: 24px;
-  }
-
-  .service-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
-  .tag {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    background: rgba(11,29,58,0.06);
-    color: var(--navy);
-    padding: 4px 10px;
-    border-radius: 3px;
-  }
-
-  .service-arrow {
-    position: absolute;
-    top: 28px;
-    right: 28px;
-    width: 32px;
-    height: 32px;
-    background: var(--red);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transform: translateX(8px);
-    transition: all 0.25s;
-  }
-
-  /* ── DIFERENCIAIS ── */
-  .diff-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
-  }
-
-  .diff-item {
-    padding: 40px 0;
-    border-top: 2px solid rgba(255,255,255,0.1);
-    transition: border-top-color 0.2s;
-  }
-
-  .diff-item:hover { border-top-color: var(--red); }
-
-  .diff-icon {
-    width: 48px;
-    height: 48px;
-    margin-bottom: 20px;
-    display: block;
-  }
-
-  .diff-title {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    color: var(--white);
-    margin-bottom: 12px;
-  }
-
-  .diff-desc {
-    font-size: 14px;
-    line-height: 1.65;
-    color: rgba(255,255,255,0.5);
-  }
-
-  /* ── PROFISSIONAIS ── */
-  .talent-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-
-  .talent-visual {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-
-  .talent-card {
-    background: var(--off-white);
-    border-radius: 8px;
-    padding: 24px;
-    border: 1px solid var(--gray-light);
-    transition: border-color 0.25s;
-  }
-
-  .talent-card:hover { border-color: var(--red); }
-
-  .talent-avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 18px;
-    margin-bottom: 14px;
-  }
-
-  .talent-name {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 15px;
-    text-transform: uppercase;
-    color: var(--navy);
-    margin-bottom: 4px;
-  }
-
-  .talent-role {
-    font-size: 12px;
-    color: var(--gray);
-    margin-bottom: 12px;
-  }
-
-  .talent-skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-  }
-
-  .skill-tag {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    background: rgba(192,21,26,0.08);
-    color: var(--red);
-    padding: 3px 8px;
-    border-radius: 3px;
-    text-transform: uppercase;
-  }
-
-  /* ── CTA BAND ── */
-  .cta-band {
-    background: var(--red);
-    padding: 80px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    gap: 40px;
-  }
-
-  .cta-title {
-    font-family: var(--font-display);
-    font-weight: 900;
-    font-size: 48px;
-    text-transform: uppercase;
-    line-height: 0.95;
-    color: var(--white);
-  }
-
-  .cta-right {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: flex-end;
-  }
-
-  .btn-white {
-    background: var(--white);
-    color: var(--red);
-    font-family: var(--font-display);
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 16px 40px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: opacity 0.2s;
-    text-decoration: none;
-    display: inline-block;
-  }
-
-  .btn-white:hover { opacity: 0.9; }
-
-  .cta-note {
-    font-size: 12px;
-    color: rgba(255,255,255,0.6);
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background: #060E1F;
-    padding: 64px 80px 40px;
-  }
-
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 60px;
-    padding-bottom: 48px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    margin-bottom: 32px;
-  }
-
-  .footer-brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
-    text-decoration: none;
-  }
-
-  .footer-brand-desc {
-    font-size: 14px;
-    line-height: 1.7;
-    color: rgba(255,255,255,0.4);
-    max-width: 280px;
-  }
-
-  .footer-col-title {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.35);
-    margin-bottom: 20px;
-  }
-
-  .footer-links {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .footer-links a {
-    font-size: 14px;
-    color: rgba(255,255,255,0.6);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .footer-links a:hover { color: var(--white); }
-
-  .footer-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .footer-copy {
-    font-size: 12px;
-    color: rgba(255,255,255,0.3);
-  }
-
-  .footer-copy span { color: var(--red); }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 1024px) {
-    nav { padding: 0 32px; }
-    .nav-links { gap: 20px; }
-    .hero { grid-template-columns: 1fr; }
-    .hero-right { display: none; }
-    .hero-left { padding: 60px 40px; }
-    .hero-title { font-size: 56px; }
-    .section { padding: 72px 40px; }
-    .steps-grid { grid-template-columns: 1fr 1fr; }
-    .services-grid { grid-template-columns: 1fr; }
-    .diff-grid { grid-template-columns: 1fr 1fr; }
-    .talent-section { grid-template-columns: 1fr; gap: 48px; }
-    .cta-band { grid-template-columns: 1fr; padding: 60px 40px; }
-    .cta-right { align-items: flex-start; }
-    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-  }
-
-  @media (max-width: 640px) {
-    nav { padding: 0 20px; }
-    .nav-links { display: none; }
-    .hero-left { padding: 48px 24px; }
-    .hero-title { font-size: 44px; }
-    .hero-stats { flex-direction: column; gap: 24px; }
-    .section { padding: 60px 24px; }
-    .section-title { font-size: 40px; }
-    .steps-grid { grid-template-columns: 1fr; }
-    .diff-grid { grid-template-columns: 1fr; }
-    .talent-visual { grid-template-columns: 1fr; }
-    .cta-band { padding: 48px 24px; }
-    .cta-title { font-size: 36px; }
-    .footer { padding: 48px 24px 32px; }
-    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TKMaster — Consultoria e Sistemas</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --navy: #0B1D3A;
+      --navy-light: #152B52;
+      --red: #C0151A;
+      --red-light: #E01A20;
+      --red-glow: #E01A2022;
+      --white: #FFFFFF;
+      --off-white: #F5F5F3;
+      --gray: #9A9A94;
+      --gray-light: #EBEBEA;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body: 'Barlow', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--off-white);
+      color: var(--navy);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+      height: 64px;
+      border-bottom: 2px solid var(--red);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-text {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .logo-sub {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--gray);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-cta {
+      background: var(--red) !important;
+      color: var(--white) !important;
+      padding: 8px 20px !important;
+      border-radius: 3px;
+      opacity: 1 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--red-light) !important;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--navy);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 64px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-bg-lines {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .geo-circle {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(192, 21, 26, 0.15);
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 40px 80px 80px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 24px;
+    }
+
+    .hero-tag::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--red);
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 72px;
+      line-height: 0.92;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      margin-bottom: 28px;
+      text-transform: uppercase;
+    }
+
+    .hero-title span {
+      color: var(--red);
+      display: block;
+    }
+
+    .hero-desc {
+      font-size: 16px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.6);
+      max-width: 420px;
+      margin-bottom: 48px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 14px 36px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background: var(--red-light);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: rgba(255, 255, 255, 0.8);
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 14px 36px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 3px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(255, 255, 255, 0.6);
+      color: var(--white);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 64px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 40px;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+      margin-top: 4px;
+    }
+
+    .hero-right {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      overflow: hidden;
+    }
+
+    .hero-card-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 60px 60px 60px 0;
+      width: 100%;
+      max-width: 400px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hcard {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 20px 24px;
+      transition: all 0.3s;
+    }
+
+    .hcard:hover {
+      background: rgba(255, 255, 255, 0.09);
+      border-color: rgba(192, 21, 26, 0.4);
+    }
+
+    .hcard-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--red-glow);
+      border: 1px solid rgba(192, 21, 26, 0.3);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .hcard-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .hcard-desc {
+      font-size: 13px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      padding: 100px 80px;
+    }
+
+    .section-alt {
+      background: var(--white);
+    }
+
+    .section-dark {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 16px;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--red);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 52px;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--gray);
+      max-width: 500px;
+      margin-bottom: 64px;
+    }
+
+    .dark-sub {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* ── STEPS ── */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--gray-light);
+      border: 1px solid var(--gray-light);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .step {
+      background: var(--white);
+      padding: 36px 28px;
+      position: relative;
+    }
+
+    .step-num {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 64px;
+      color: var(--gray-light);
+      line-height: 1;
+      position: absolute;
+      top: 16px;
+      right: 20px;
+    }
+
+    .step-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--navy);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .step-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .step-desc {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--gray);
+    }
+
+    .step-highlight {
+      background: var(--red);
+    }
+
+    .step-highlight .step-num {
+      color: rgba(255, 255, 255, 0.15);
+    }
+
+    .step-highlight .step-icon {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .step-highlight .step-title {
+      color: var(--white);
+    }
+
+    .step-highlight .step-desc {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* ── SERVICES ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--off-white);
+      border: 1px solid var(--gray-light);
+      border-radius: 8px;
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .service-card:hover {
+      border-color: var(--red);
+      background: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .service-card:hover .service-arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .service-num {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 20px;
+    }
+
+    .service-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--navy);
+      margin-bottom: 12px;
+      line-height: 1.1;
+    }
+
+    .service-desc {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--gray);
+      margin-bottom: 24px;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: rgba(11, 29, 58, 0.06);
+      color: var(--navy);
+      padding: 4px 10px;
+      border-radius: 3px;
+    }
+
+    .service-arrow {
+      position: absolute;
+      top: 28px;
+      right: 28px;
+      width: 32px;
+      height: 32px;
+      background: var(--red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: translateX(8px);
+      transition: all 0.25s;
+    }
+
+    /* ── DIFERENCIAIS ── */
+    .diff-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    .diff-item {
+      padding: 40px 0;
+      border-top: 2px solid rgba(255, 255, 255, 0.1);
+      transition: border-top-color 0.2s;
+    }
+
+    .diff-item:hover {
+      border-top-color: var(--red);
+    }
+
+    .diff-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .diff-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .diff-desc {
+      font-size: 14px;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* ── PROFISSIONAIS ── */
+    .talent-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .talent-visual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .talent-card {
+      background: var(--off-white);
+      border-radius: 8px;
+      padding: 24px;
+      border: 1px solid var(--gray-light);
+      transition: border-color 0.25s;
+    }
+
+    .talent-card:hover {
+      border-color: var(--red);
+    }
+
+    .talent-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 14px;
+    }
+
+    .talent-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 15px;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .talent-role {
+      font-size: 12px;
+      color: var(--gray);
+      margin-bottom: 12px;
+    }
+
+    .talent-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .skill-tag {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      background: rgba(192, 21, 26, 0.08);
+      color: var(--red);
+      padding: 3px 8px;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+
+    /* ── CTA BAND ── */
+    .cta-band {
+      background: var(--red);
+      padding: 80px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .cta-title {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 48px;
+      text-transform: uppercase;
+      line-height: 0.95;
+      color: var(--white);
+    }
+
+    .cta-right {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-end;
+    }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--red);
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 16px 40px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: opacity 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-white:hover {
+      opacity: 0.9;
+    }
+
+    .cta-note {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #060E1F;
+      padding: 64px 80px 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 32px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      text-decoration: none;
+    }
+
+    .footer-brand-desc {
+      font-size: 14px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.4);
+      max-width: 280px;
+    }
+
+    .footer-col-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.35);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .footer-copy span {
+      color: var(--red);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      nav {
+        padding: 0 32px;
+      }
+
+      .nav-links {
+        gap: 20px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-right {
+        display: none;
+      }
+
+      .hero-left {
+        padding: 60px 40px;
+      }
+
+      .hero-title {
+        font-size: 56px;
+      }
+
+      .section {
+        padding: 72px 40px;
+      }
+
+      .steps-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .diff-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .talent-section {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .cta-band {
+        grid-template-columns: 1fr;
+        padding: 60px 40px;
+      }
+
+      .cta-right {
+        align-items: flex-start;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      nav {
+        padding: 0 20px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-left {
+        padding: 48px 24px;
+      }
+
+      .hero-title {
+        font-size: 44px;
+      }
+
+      .hero-stats {
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .section {
+        padding: 60px 24px;
+      }
+
+      .section-title {
+        font-size: 40px;
+      }
+
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .diff-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .talent-visual {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-band {
+        padding: 48px 24px;
+      }
+
+      .cta-title {
+        font-size: 36px;
+      }
+
+      .footer {
+        padding: 48px 24px 32px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .social-link {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .social-link:hover {
+      border-color: var(--red);
+      background: rgba(192, 21, 26, 0.1);
+    }
+
+    .social-link svg {
+      width: 18px;
+      height: 18px;
+      fill: rgba(255, 255, 255, 0.6);
+      transition: fill 0.2s;
+    }
+
+    .social-link:hover svg {
+      fill: var(--white);
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- ── NAV ── -->
-<nav>
-  <a href="#inicio" class="nav-logo">
-    <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-      <circle cx="18" cy="18" r="14" stroke="white" stroke-width="1.5"/>
-      <ellipse cx="18" cy="18" rx="7" ry="14" stroke="white" stroke-width="1.5"/>
-      <line x1="4" y1="18" x2="32" y2="18" stroke="white" stroke-width="1.5"/>
-      <line x1="18" y1="4" x2="18" y2="32" stroke="white" stroke-width="1.5"/>
-      <path d="M6 11h24M6 25h24" stroke="white" stroke-width="1.5"/>
-    </svg>
-    <div>
-      <div class="logo-text">TKMASTER</div>
-      <div class="logo-sub">Consultoria e Sistemas</div>
-    </div>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#como-funciona">Como Funciona</a></li>
-    <li><a href="#servicos">Serviços</a></li>
-    <li><a href="#profissionais">Profissionais</a></li>
-    <li><a href="#sobre">Sobre</a></li>
-    <li><a href="#contato" class="nav-cta">Falar com a equipe</a></li>
-  </ul>
-</nav>
-
-<!-- ── HERO ── -->
-<section class="hero" id="inicio">
-  <div class="hero-bg-lines">
-    <div class="geo-circle" style="width:600px;height:600px;top:-100px;right:-100px;opacity:0.4;"></div>
-    <div class="geo-circle" style="width:400px;height:400px;top:50px;right:50px;opacity:0.25;"></div>
-    <div class="geo-circle" style="width:200px;height:200px;top:150px;right:150px;opacity:0.2;border-color:rgba(192,21,26,0.3);"></div>
-  </div>
-
-  <div class="hero-left">
-    <div class="hero-tag">Consultoria de TI · Body Shop</div>
-    <h1 class="hero-title">
-      Profissionais de TI<br>
-      <span>Sob Medida</span>
-      para o seu projeto
-    </h1>
-    <p class="hero-desc">A TKMaster conecta empresas a profissionais técnicos qualificados — do desenvolvimento ao suporte — com rastreabilidade, gestão ativa e zero burocracia para você.</p>
-    <div class="hero-actions">
-      <a href="#contato" class="btn-primary">Preciso de um Profissional</a>
-      <a href="#profissionais" class="btn-outline">Sou Desenvolvedor</a>
-    </div>
-    <div class="hero-stats">
+  <!-- ── NAV ── -->
+  <nav>
+    <a href="#inicio" class="nav-logo">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+        <circle cx="18" cy="18" r="14" stroke="white" stroke-width="1.5" />
+        <ellipse cx="18" cy="18" rx="7" ry="14" stroke="white" stroke-width="1.5" />
+        <line x1="4" y1="18" x2="32" y2="18" stroke="white" stroke-width="1.5" />
+        <line x1="18" y1="4" x2="18" y2="32" stroke="white" stroke-width="1.5" />
+        <path d="M6 11h24M6 25h24" stroke="white" stroke-width="1.5" />
+      </svg>
       <div>
-        <div class="stat-num">48h</div>
-        <div class="stat-label">Tempo médio de match</div>
+        <div class="logo-text">TKMASTER</div>
+        <div class="logo-sub">Consultoria e Sistemas</div>
       </div>
-      <div>
-        <div class="stat-num">PJ</div>
-        <div class="stat-label">Contratação simplificada</div>
-      </div>
-      <div>
-        <div class="stat-num">GC</div>
-        <div class="stat-label">Gerente de contas dedicado</div>
-      </div>
-    </div>
-  </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#como-funciona">Como Funciona</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#profissionais">Profissionais</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#contato" class="nav-cta">Falar com a equipe</a></li>
+    </ul>
+  </nav>
 
-  <div class="hero-right">
-    <div class="hero-card-stack">
-      <div class="hcard">
-        <div class="hcard-icon">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <rect x="2" y="2" width="6" height="6" rx="1.5" fill="#C0151A"/>
-            <rect x="10" y="2" width="6" height="6" rx="1.5" fill="rgba(255,255,255,0.3)"/>
-            <rect x="2" y="10" width="6" height="6" rx="1.5" fill="rgba(255,255,255,0.3)"/>
-            <rect x="10" y="10" width="6" height="6" rx="1.5" fill="rgba(255,255,255,0.3)"/>
-          </svg>
-        </div>
-        <div class="hcard-title">Alocação Ágil</div>
-        <div class="hcard-desc">Profissional no cliente em até 48h após a aprovação do perfil.</div>
-      </div>
-      <div class="hcard">
-        <div class="hcard-icon">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <circle cx="9" cy="6" r="3.5" stroke="#C0151A" stroke-width="1.5"/>
-            <path d="M3 15c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="#C0151A" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="hcard-title">Gestão Ativa</div>
-        <div class="hcard-desc">Check-ins quinzenais e relatórios mensais. Você nunca fica sem informação.</div>
-      </div>
-      <div class="hcard">
-        <div class="hcard-icon">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <path d="M9 2L11.5 7H16L12 10.5L13.5 16L9 13L4.5 16L6 10.5L2 7H6.5L9 2Z" stroke="#C0151A" stroke-width="1.5" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="hcard-title">Zero Risco Trabalhista</div>
-        <div class="hcard-desc">Contratos PJ com cláusulas de proteção claras para todas as partes.</div>
-      </div>
+  <!-- ── HERO ── -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg-lines">
+      <div class="geo-circle" style="width:600px;height:600px;top:-100px;right:-100px;opacity:0.4;"></div>
+      <div class="geo-circle" style="width:400px;height:400px;top:50px;right:50px;opacity:0.25;"></div>
+      <div class="geo-circle"
+        style="width:200px;height:200px;top:150px;right:150px;opacity:0.2;border-color:rgba(192,21,26,0.3);"></div>
     </div>
-  </div>
-</section>
 
-<!-- ── COMO FUNCIONA ── -->
-<section class="section section-alt" id="como-funciona">
-  <div class="section-label">Processo</div>
-  <h2 class="section-title">Como funciona<br>do pedido ao go-live</h2>
-  <p class="section-sub">Quatro etapas simples. Nenhuma dor de cabeça com recrutamento.</p>
-
-  <div class="steps-grid">
-    <div class="step">
-      <div class="step-num">01</div>
-      <div class="step-icon">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-          <path d="M4 4h12v2H4zM4 9h12v2H4zM4 14h8v2H4z" fill="white" opacity="0.8"/>
-        </svg>
+    <div class="hero-left">
+      <div class="hero-tag">Consultoria de TI · Body Shop</div>
+      <h1 class="hero-title">
+        Profissionais de TI<br>
+        <span>Sob Medida</span>
+        para o seu projeto
+      </h1>
+      <p class="hero-desc">A TKMaster conecta empresas a profissionais técnicos qualificados — do desenvolvimento ao
+        suporte — com rastreabilidade, gestão ativa e zero burocracia para você.</p>
+      <div class="hero-actions">
+        <a href="#contato" class="btn-primary">Preciso de um Profissional</a>
+        <a href="https://forms.gle/iVuhzTtGr4wwKFxN7" target="_blank" class="btn-outline">
+          Sou Desenvolvedor
+        </a>
       </div>
-      <div class="step-title">Briefing do Perfil</div>
-      <div class="step-desc">Você nos conta o que precisa: stack, senioridade, tempo de projeto. Nós escutamos com atenção.</div>
-    </div>
-    <div class="step step-highlight">
-      <div class="step-num">02</div>
-      <div class="step-icon">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-          <circle cx="10" cy="7" r="4" stroke="white" stroke-width="1.5"/>
-          <path d="M3 18c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <div class="step-title">Match com o Banco</div>
-      <div class="step-desc">Consultamos nosso banco de talentos qualificados e apresentamos candidatos já avaliados.</div>
-    </div>
-    <div class="step">
-      <div class="step-num">03</div>
-      <div class="step-icon">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-          <path d="M5 10l4 4 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="step-title">Aprovação e Contrato</div>
-      <div class="step-desc">Você aprova o perfil. A TKMaster cuida de toda a formalização contratual PJ.</div>
-    </div>
-    <div class="step">
-      <div class="step-num">04</div>
-      <div class="step-icon">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-          <circle cx="10" cy="10" r="8" stroke="white" stroke-width="1.5"/>
-          <path d="M10 6v4l3 3" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <div class="step-title">Gestão Contínua</div>
-      <div class="step-desc">Seu Gerente de Contas acompanha o dia a dia. Ocorrências tratadas em até 24h.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ── SERVIÇOS ── -->
-<section class="section" id="servicos">
-  <div class="section-label">Serviços</div>
-  <h2 class="section-title">O que a<br>TKMaster oferece</h2>
-  <p class="section-sub">Soluções para empresas que precisam de tech talent sem a dor de cabeça do RH.</p>
-
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-arrow">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M3 7h8M8 4l3 3-3 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="service-num">01 — Principal</div>
-      <div class="service-title">Alocação de<br>Profissionais de TI</div>
-      <div class="service-desc">Desenvolvedores, analistas, QAs, DevOps e mais — contratados como PJ, alocados no seu time, gerenciados pela TKMaster.</div>
-      <div class="service-tags">
-        <span class="tag">Frontend</span>
-        <span class="tag">Backend</span>
-        <span class="tag">Mobile</span>
-        <span class="tag">DevOps</span>
-        <span class="tag">QA</span>
-        <span class="tag">Data</span>
-      </div>
-    </div>
-    <div class="service-card">
-      <div class="service-arrow">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M3 7h8M8 4l3 3-3 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="service-num">02</div>
-      <div class="service-title">Gestão de<br>Contratos PJ</div>
-      <div class="service-desc">Toda a burocracia de contratação, renovação, reajuste e encerramento — documentada e segura para ambas as partes.</div>
-      <div class="service-tags">
-        <span class="tag">Contrato PJ</span>
-        <span class="tag">Aditivos</span>
-        <span class="tag">Reajuste</span>
-      </div>
-    </div>
-    <div class="service-card">
-      <div class="service-arrow">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M3 7h8M8 4l3 3-3 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="service-num">03</div>
-      <div class="service-title">Gerência de<br>Contas Ativa</div>
-      <div class="service-desc">Seu ponto de contato dedicado monitora a satisfação de ambos os lados e age preventivamente nos problemas.</div>
-      <div class="service-tags">
-        <span class="tag">Check-ins</span>
-        <span class="tag">NPS</span>
-        <span class="tag">Relatórios</span>
-      </div>
-    </div>
-    <div class="service-card">
-      <div class="service-arrow">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M3 7h8M8 4l3 3-3 3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="service-num">04 — Futuro</div>
-      <div class="service-title">Desenvolvimento<br>de Sistemas</div>
-      <div class="service-desc">Projetos sob demanda, squads dedicados e consultoria técnica para empresas que precisam de mais do que um profissional solo.</div>
-      <div class="service-tags">
-        <span class="tag">Squads</span>
-        <span class="tag">Projetos</span>
-        <span class="tag">Consultoria</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── DIFERENCIAIS ── -->
-<section class="section section-dark" id="sobre">
-  <div class="section-label">Por que TKMaster</div>
-  <h2 class="section-title" style="color:var(--white);">Não é só alocação.<br>É parceria.</h2>
-  <p class="section-sub dark-sub">A diferença está no acompanhamento — antes, durante e depois.</p>
-
-  <div class="diff-grid">
-    <div class="diff-item">
-      <svg class="diff-icon" viewBox="0 0 48 48" fill="none">
-        <circle cx="24" cy="16" r="8" stroke="#C0151A" stroke-width="2"/>
-        <path d="M8 40c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-      </svg>
-      <div class="diff-title">Profissional, não vaga</div>
-      <div class="diff-desc">Cada profissional do nosso banco é avaliado individualmente. Você recebe um perfil, não um currículo aleatório.</div>
-    </div>
-    <div class="diff-item">
-      <svg class="diff-icon" viewBox="0 0 48 48" fill="none">
-        <path d="M8 24h32M24 8v32" stroke="#C0151A" stroke-width="2" stroke-linecap="round"/>
-        <circle cx="24" cy="24" r="10" stroke="white" stroke-width="2" opacity="0.6"/>
-      </svg>
-      <div class="diff-title">Rastreabilidade total</div>
-      <div class="diff-desc">Relatórios mensais e semestrais. Formulários padronizados. Histórico de ocorrências registrado. Tudo documentado.</div>
-    </div>
-    <div class="diff-item">
-      <svg class="diff-icon" viewBox="0 0 48 48" fill="none">
-        <rect x="8" y="16" width="32" height="22" rx="3" stroke="white" stroke-width="2" opacity="0.6"/>
-        <path d="M16 16v-4a8 8 0 0116 0v4" stroke="#C0151A" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <div class="diff-title">Segurança jurídica</div>
-      <div class="diff-desc">Contratos PJ com cláusulas de proteção, confidencialidade e taxa de conversão clara caso queira internalizar o profissional.</div>
-    </div>
-    <div class="diff-item">
-      <svg class="diff-icon" viewBox="0 0 48 48" fill="none">
-        <path d="M24 8l4 10h11l-9 6.5 3.5 11L24 29l-9.5 6.5L18 24.5 9 18h11z" stroke="#C0151A" stroke-width="2" stroke-linejoin="round"/>
-      </svg>
-      <div class="diff-title">Crescimento mútuo</div>
-      <div class="diff-desc">Profissional bem acompanhado cresce — e indica outros. Plano de desenvolvimento ativo, não só entrega de hora.</div>
-    </div>
-    <div class="diff-item">
-      <svg class="diff-icon" viewBox="0 0 48 48" fill="none">
-        <circle cx="24" cy="24" r="14" stroke="white" stroke-width="2" opacity="0.6"/>
-        <path d="M24 14v10l7 7" stroke="#C0151A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <div class="diff-title">Resposta em 24h</div>
-      <div class="diff-desc">Qualquer ocorrência — do profissional ou do cliente — é registrada e tratada no mesmo dia. Sem esperar o próximo check-in.</div>
-    </div>
-    <div class="diff-item">
-      <svg class="diff-icon" viewBox="0 0 48 48" fill="none">
-        <path d="M8 32L20 20l8 8 12-16" stroke="#C0151A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <div class="diff-title">Escalabilidade</div>
-      <div class="diff-desc">Comece com um profissional. Cresça para um squad. A TKMaster acompanha o ritmo do seu negócio.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ── PROFISSIONAIS ── -->
-<section class="section section-alt" id="profissionais">
-  <div class="talent-section">
-    <div>
-      <div class="section-label">Para Profissionais</div>
-      <h2 class="section-title">Você é dev?<br>A TKMaster<br>é sua base.</h2>
-      <p class="section-sub">Trabalhe com os melhores clientes, tenha um ponto de contato que resolve, e receba suporte ativo na sua carreira — não só uma planilha de pagamento.</p>
-      <a href="#contato" class="btn-primary" style="margin-top: 8px; display: inline-block;">Quero me cadastrar</a>
-    </div>
-    <div class="talent-visual">
-      <div class="talent-card">
-        <div class="talent-avatar" style="background: rgba(192,21,26,0.12); color: var(--red);">RS</div>
-        <div class="talent-name">Rafael S.</div>
-        <div class="talent-role">Dev Backend · Sênior</div>
-        <div class="talent-skills">
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">AWS</span>
-        </div>
-      </div>
-      <div class="talent-card">
-        <div class="talent-avatar" style="background: rgba(11,29,58,0.08); color: var(--navy);">AC</div>
-        <div class="talent-name">Ana C.</div>
-        <div class="talent-role">Frontend · Pleno</div>
-        <div class="talent-skills">
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">TypeScript</span>
-        </div>
-      </div>
-      <div class="talent-card">
-        <div class="talent-avatar" style="background: rgba(192,21,26,0.12); color: var(--red);">MO</div>
-        <div class="talent-name">Marcos O.</div>
-        <div class="talent-role">DevOps · Sênior</div>
-        <div class="talent-skills">
-          <span class="skill-tag">K8s</span>
-          <span class="skill-tag">Terraform</span>
-          <span class="skill-tag">GCP</span>
-        </div>
-      </div>
-      <div class="talent-card" style="background: var(--red); border-color: var(--red);">
-        <div class="talent-avatar" style="background: rgba(255,255,255,0.2); color: white;">+</div>
-        <div class="talent-name" style="color: white;">Você aqui</div>
-        <div class="talent-role" style="color: rgba(255,255,255,0.7);">Seu perfil · Sua stack</div>
-        <div class="talent-skills">
-          <span class="skill-tag" style="background: rgba(255,255,255,0.2); color: white;">Cadastre-se</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── CTA BAND ── -->
-<div class="cta-band" id="contato">
-  <div class="cta-title">Pronto para contratar<br>sem complicação?</div>
-  <div class="cta-right">
-    <a href="mailto:contato@tkmaster.com.br" class="btn-white">Falar com a TKMaster</a>
-    <span class="cta-note">Resposta em até 1 dia útil</span>
-  </div>
-</div>
-
-<!-- ── FOOTER ── -->
-<footer>
-  <div class="footer-grid">
-    <div>
-      <a href="#inicio" class="footer-brand">
-        <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
-          <circle cx="18" cy="18" r="14" stroke="white" stroke-width="1.5"/>
-          <ellipse cx="18" cy="18" rx="7" ry="14" stroke="white" stroke-width="1.5"/>
-          <line x1="4" y1="18" x2="32" y2="18" stroke="white" stroke-width="1.5"/>
-          <line x1="18" y1="4" x2="18" y2="32" stroke="white" stroke-width="1.5"/>
-          <path d="M6 11h24M6 25h24" stroke="white" stroke-width="1.5"/>
-        </svg>
+      <div class="hero-stats">
         <div>
-          <div class="logo-text">TKMASTER</div>
-          <div class="logo-sub">Consultoria e Sistemas</div>
+          <div class="stat-num">48h</div>
+          <div class="stat-label">Tempo médio de match</div>
         </div>
-      </a>
-      <p class="footer-brand-desc">Conectamos empresas a profissionais de TI qualificados, com gestão ativa e documentação impecável. Rio de Janeiro — Brasil.</p>
+        <div>
+          <div class="stat-num">PJ</div>
+          <div class="stat-label">Contratação simplificada</div>
+        </div>
+        <div>
+          <div class="stat-num">GC</div>
+          <div class="stat-label">Gerente de contas dedicado</div>
+        </div>
+      </div>
     </div>
-    <div>
-      <div class="footer-col-title">Empresa</div>
-      <ul class="footer-links">
-        <li><a href="#sobre">Sobre a TKMaster</a></li>
-        <li><a href="#como-funciona">Como Funciona</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
+
+    <div class="hero-right">
+      <div class="hero-card-stack">
+        <div class="hcard">
+          <div class="hcard-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <rect x="2" y="2" width="6" height="6" rx="1.5" fill="#C0151A" />
+              <rect x="10" y="2" width="6" height="6" rx="1.5" fill="rgba(255,255,255,0.3)" />
+              <rect x="2" y="10" width="6" height="6" rx="1.5" fill="rgba(255,255,255,0.3)" />
+              <rect x="10" y="10" width="6" height="6" rx="1.5" fill="rgba(255,255,255,0.3)" />
+            </svg>
+          </div>
+          <div class="hcard-title">Alocação Ágil</div>
+          <div class="hcard-desc">Profissional no cliente em até 48h após a aprovação do perfil.</div>
+        </div>
+        <div class="hcard">
+          <div class="hcard-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <circle cx="9" cy="6" r="3.5" stroke="#C0151A" stroke-width="1.5" />
+              <path d="M3 15c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="#C0151A" stroke-width="1.5"
+                stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="hcard-title">Gestão Ativa</div>
+          <div class="hcard-desc">Check-ins quinzenais e relatórios mensais. Você nunca fica sem informação.</div>
+        </div>
+        <div class="hcard">
+          <div class="hcard-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M9 2L11.5 7H16L12 10.5L13.5 16L9 13L4.5 16L6 10.5L2 7H6.5L9 2Z" stroke="#C0151A"
+                stroke-width="1.5" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="hcard-title">Zero Risco Trabalhista</div>
+          <div class="hcard-desc">Contratos PJ com cláusulas de proteção claras para todas as partes.</div>
+        </div>
+      </div>
     </div>
-    <div>
-      <div class="footer-col-title">Para Empresas</div>
-      <ul class="footer-links">
-        <li><a href="#servicos">Alocação de TI</a></li>
-        <li><a href="#servicos">Gestão de Contratos</a></li>
-        <li><a href="#servicos">Gerência de Contas</a></li>
-        <li><a href="#servicos">Desenvolvimento</a></li>
-      </ul>
+  </section>
+
+  <!-- ── COMO FUNCIONA ── -->
+  <section class="section section-alt" id="como-funciona">
+    <div class="section-label">Processo</div>
+    <h2 class="section-title">Como funciona<br>do pedido ao go-live</h2>
+    <p class="section-sub">Quatro etapas simples. Nenhuma dor de cabeça com recrutamento.</p>
+
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M4 4h12v2H4zM4 9h12v2H4zM4 14h8v2H4z" fill="white" opacity="0.8" />
+          </svg>
+        </div>
+        <div class="step-title">Briefing do Perfil</div>
+        <div class="step-desc">Você nos conta o que precisa: stack, senioridade, tempo de projeto. Nós escutamos com
+          atenção.</div>
+      </div>
+      <div class="step step-highlight">
+        <div class="step-num">02</div>
+        <div class="step-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="7" r="4" stroke="white" stroke-width="1.5" />
+            <path d="M3 18c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </div>
+        <div class="step-title">Match com o Banco</div>
+        <div class="step-desc">Consultamos nosso banco de talentos qualificados e apresentamos candidatos já avaliados.
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M5 10l4 4 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="step-title">Aprovação e Contrato</div>
+        <div class="step-desc">Você aprova o perfil. A TKMaster cuida de toda a formalização contratual PJ.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-icon">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="8" stroke="white" stroke-width="1.5" />
+            <path d="M10 6v4l3 3" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+        </div>
+        <div class="step-title">Gestão Contínua</div>
+        <div class="step-desc">Seu Gerente de Contas acompanha o dia a dia. Ocorrências tratadas em até 24h.</div>
+      </div>
     </div>
-    <div>
-      <div class="footer-col-title">Para Profissionais</div>
-      <ul class="footer-links">
-        <li><a href="#profissionais">Cadastre seu Perfil</a></li>
-        <li><a href="#profissionais">Como Funciona o PJ</a></li>
-        <li><a href="#profissionais">Banco de Talentos</a></li>
-        <li><a href="#profissionais">Plano de Carreira</a></li>
-      </ul>
+  </section>
+
+  <!-- ── SERVIÇOS ── -->
+  <section class="section" id="servicos">
+    <div class="section-label">Serviços</div>
+    <h2 class="section-title">O que a<br>TKMaster oferece</h2>
+    <p class="section-sub">Soluções para empresas que precisam de tech talent sem a dor de cabeça do RH.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-arrow">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M3 7h8M8 4l3 3-3 3" stroke="white" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="service-num">01 — Principal</div>
+        <div class="service-title">Alocação de<br>Profissionais de TI</div>
+        <div class="service-desc">Desenvolvedores, analistas, QAs, DevOps e mais — contratados como PJ, alocados no seu
+          time, gerenciados pela TKMaster.</div>
+        <div class="service-tags">
+          <span class="tag">Frontend</span>
+          <span class="tag">Backend</span>
+          <span class="tag">Mobile</span>
+          <span class="tag">DevOps</span>
+          <span class="tag">QA</span>
+          <span class="tag">Data</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-arrow">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M3 7h8M8 4l3 3-3 3" stroke="white" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="service-num">02</div>
+        <div class="service-title">Gestão de<br>Contratos PJ</div>
+        <div class="service-desc">Toda a burocracia de contratação, renovação, reajuste e encerramento — documentada e
+          segura para ambas as partes.</div>
+        <div class="service-tags">
+          <span class="tag">Contrato PJ</span>
+          <span class="tag">Aditivos</span>
+          <span class="tag">Reajuste</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-arrow">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M3 7h8M8 4l3 3-3 3" stroke="white" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="service-num">03</div>
+        <div class="service-title">Gerência de<br>Contas Ativa</div>
+        <div class="service-desc">Seu ponto de contato dedicado monitora a satisfação de ambos os lados e age
+          preventivamente nos problemas.</div>
+        <div class="service-tags">
+          <span class="tag">Check-ins</span>
+          <span class="tag">NPS</span>
+          <span class="tag">Relatórios</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-arrow">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M3 7h8M8 4l3 3-3 3" stroke="white" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="service-num">04 — Futuro</div>
+        <div class="service-title">Desenvolvimento<br>de Sistemas</div>
+        <div class="service-desc">Projetos sob demanda, squads dedicados e consultoria técnica para empresas que
+          precisam de mais do que um profissional solo.</div>
+        <div class="service-tags">
+          <span class="tag">Squads</span>
+          <span class="tag">Projetos</span>
+          <span class="tag">Consultoria</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DIFERENCIAIS ── -->
+  <section class="section section-dark" id="sobre">
+    <div class="section-label">Por que TKMaster</div>
+    <h2 class="section-title" style="color:var(--white);">Não é só alocação.<br>É parceria.</h2>
+    <p class="section-sub dark-sub">A diferença está no acompanhamento — antes, durante e depois.</p>
+
+    <div class="diff-grid">
+      <div class="diff-item">
+        <svg class="diff-icon" viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="16" r="8" stroke="#C0151A" stroke-width="2" />
+          <path d="M8 40c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="white" stroke-width="2" stroke-linecap="round"
+            opacity="0.6" />
+        </svg>
+        <div class="diff-title">Profissional, não vaga</div>
+        <div class="diff-desc">Cada profissional do nosso banco é avaliado individualmente. Você recebe um perfil, não
+          um currículo aleatório.</div>
+      </div>
+      <div class="diff-item">
+        <svg class="diff-icon" viewBox="0 0 48 48" fill="none">
+          <path d="M8 24h32M24 8v32" stroke="#C0151A" stroke-width="2" stroke-linecap="round" />
+          <circle cx="24" cy="24" r="10" stroke="white" stroke-width="2" opacity="0.6" />
+        </svg>
+        <div class="diff-title">Rastreabilidade total</div>
+        <div class="diff-desc">Relatórios mensais e semestrais. Formulários padronizados. Histórico de ocorrências
+          registrado. Tudo documentado.</div>
+      </div>
+      <div class="diff-item">
+        <svg class="diff-icon" viewBox="0 0 48 48" fill="none">
+          <rect x="8" y="16" width="32" height="22" rx="3" stroke="white" stroke-width="2" opacity="0.6" />
+          <path d="M16 16v-4a8 8 0 0116 0v4" stroke="#C0151A" stroke-width="2" stroke-linecap="round" />
+        </svg>
+        <div class="diff-title">Segurança jurídica</div>
+        <div class="diff-desc">Contratos PJ com cláusulas de proteção, confidencialidade e taxa de conversão clara caso
+          queira internalizar o profissional.</div>
+      </div>
+      <div class="diff-item">
+        <svg class="diff-icon" viewBox="0 0 48 48" fill="none">
+          <path d="M24 8l4 10h11l-9 6.5 3.5 11L24 29l-9.5 6.5L18 24.5 9 18h11z" stroke="#C0151A" stroke-width="2"
+            stroke-linejoin="round" />
+        </svg>
+        <div class="diff-title">Crescimento mútuo</div>
+        <div class="diff-desc">Profissional bem acompanhado cresce — e indica outros. Plano de desenvolvimento ativo,
+          não só entrega de hora.</div>
+      </div>
+      <div class="diff-item">
+        <svg class="diff-icon" viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="24" r="14" stroke="white" stroke-width="2" opacity="0.6" />
+          <path d="M24 14v10l7 7" stroke="#C0151A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <div class="diff-title">Resposta em 24h</div>
+        <div class="diff-desc">Qualquer ocorrência — do profissional ou do cliente — é registrada e tratada no mesmo
+          dia. Sem esperar o próximo check-in.</div>
+      </div>
+      <div class="diff-item">
+        <svg class="diff-icon" viewBox="0 0 48 48" fill="none">
+          <path d="M8 32L20 20l8 8 12-16" stroke="#C0151A" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        <div class="diff-title">Escalabilidade</div>
+        <div class="diff-desc">Comece com um profissional. Cresça para um squad. A TKMaster acompanha o ritmo do seu
+          negócio.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROFISSIONAIS ── -->
+  <section class="section section-alt" id="profissionais">
+    <div class="talent-section">
+      <div>
+        <div class="section-label">Para Profissionais</div>
+        <h2 class="section-title">Você é dev?<br>A TKMaster<br>é sua base.</h2>
+        <p class="section-sub">Trabalhe com os melhores clientes, tenha um ponto de contato que resolve, e receba
+          suporte ativo na sua carreira — não só uma planilha de pagamento.</p>
+        <a href="tkmaster_talentos.html" class="btn-primary" style="margin-top: 8px; display: inline-block;">Quero me
+          cadastrar</a>
+        <p style="margin-top:12px; font-size:12px; color:var(--gray);">
+          Cadastro rápido via formulário · leva menos de 2 minutos
+        </p>
+      </div>
+      <div class="talent-visual">
+        <div class="talent-card">
+          <div class="talent-avatar" style="background: rgba(192,21,26,0.12); color: var(--red);">RS</div>
+          <div class="talent-name">Rafael S.</div>
+          <div class="talent-role">Dev Backend · Sênior</div>
+          <div class="talent-skills">
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">AWS</span>
+          </div>
+        </div>
+        <div class="talent-card">
+          <div class="talent-avatar" style="background: rgba(11,29,58,0.08); color: var(--navy);">AC</div>
+          <div class="talent-name">Ana C.</div>
+          <div class="talent-role">Frontend · Pleno</div>
+          <div class="talent-skills">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">TypeScript</span>
+          </div>
+        </div>
+        <div class="talent-card">
+          <div class="talent-avatar" style="background: rgba(192,21,26,0.12); color: var(--red);">MO</div>
+          <div class="talent-name">Marcos O.</div>
+          <div class="talent-role">DevOps · Sênior</div>
+          <div class="talent-skills">
+            <span class="skill-tag">K8s</span>
+            <span class="skill-tag">Terraform</span>
+            <span class="skill-tag">GCP</span>
+          </div>
+        </div>
+        <div class="talent-card" style="background: var(--red); border-color: var(--red);">
+          <div class="talent-avatar" style="background: rgba(255,255,255,0.2); color: white;">+</div>
+          <div class="talent-name" style="color: white;">Você aqui</div>
+          <div class="talent-role" style="color: rgba(255,255,255,0.7);">Seu perfil · Sua stack</div>
+          <div class="talent-skills">
+            <span class="skill-tag" style="background: rgba(255,255,255,0.2); color: white;">Cadastre-se</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA BAND ── -->
+  <div class="cta-band" id="contato">
+    <div class="cta-title">Pronto para contratar<br>sem complicação?</div>
+    <div class="cta-right">
+      <a href="mailto:contato@tkmaster.com.br" class="btn-white">Falar com a TKMaster</a>
+      <span class="cta-note">Resposta em até 1 dia útil</span>
     </div>
   </div>
-  <div class="footer-bottom">
-    <div class="footer-copy">© 2026 <span>TKMaster</span> Consultoria e Sistemas · Rio de Janeiro, Brasil</div>
-    <div class="footer-copy">Todos os direitos reservados</div>
-  </div>
-</footer>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <a href="#inicio" class="footer-brand">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
+            <circle cx="18" cy="18" r="14" stroke="white" stroke-width="1.5" />
+            <ellipse cx="18" cy="18" rx="7" ry="14" stroke="white" stroke-width="1.5" />
+            <line x1="4" y1="18" x2="32" y2="18" stroke="white" stroke-width="1.5" />
+            <line x1="18" y1="4" x2="18" y2="32" stroke="white" stroke-width="1.5" />
+            <path d="M6 11h24M6 25h24" stroke="white" stroke-width="1.5" />
+          </svg>
+          <div>
+            <div class="logo-text">TKMASTER</div>
+            <div class="logo-sub">Consultoria e Sistemas</div>
+          </div>
+        </a>
+        <p class="footer-brand-desc">Conectamos empresas a profissionais de TI qualificados, com gestão ativa e
+          documentação impecável. Brasil.
+        <div class="footer-social">
+
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/company/tkmasterconsultorias/" target="_blank" class="social-link">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M6.94 6.5a2.44 2.44 0 1 1 0-4.88 2.44 2.44 0 0 1 0 4.88zM4.5 8.75h4.88V21H4.5zM10.75 8.75h4.68v1.67h.07c.65-1.23 2.23-2.53 4.6-2.53 4.92 0 5.83 3.24 5.83 7.45V21h-4.88v-5.7c0-1.36-.02-3.11-1.9-3.11-1.9 0-2.2 1.48-2.2 3v5.81h-4.88z" />
+            </svg>
+          </a>
+
+          <!-- YouTube -->
+          <a href="https://www.youtube.com/@TKMasterConsultorias" target="_blank" class="social-link">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M23.5 6.2s-.23-1.64-.94-2.36c-.9-.94-1.9-.95-2.36-1C16.8 2.5 12 2.5 12 2.5h0s-4.8 0-8.2.34c-.47.05-1.47.06-2.36 1C.73 4.56.5 6.2.5 6.2S.25 8.1.25 10v1.9c0 1.9.25 3.8.25 3.8s.23 1.64.94 2.36c.9.94 2.08.91 2.6 1 1.88.18 7.96.34 7.96.34s4.8-.01 8.2-.35c.47-.05 1.47-.06 2.36-1 .71-.72.94-2.36.94-2.36s.25-1.9.25-3.8V10c0-1.9-.25-3.8-.25-3.8zM9.75 14.57V7.43l6.27 3.57-6.27 3.57z" />
+            </svg>
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/tkmaster.consultoria" target="_blank" class="social-link">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm5 5a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.88a1.12 1.12 0 1 1-2.24 0 1.12 1.12 0 0 1 2.24 0zM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
+            </svg>
+          </a>
+          <!-- WhatsApp -->
+          <a href="https://wa.me/+5521989934272" target="_blank" rel="noopener" class="social-link" title="WhatsApp">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M8 1.5a6.5 6.5 0 00-5.6 9.8L1.5 14.5l3.3-.9A6.5 6.5 0 108 1.5z" stroke="rgba(255,255,255,0.6)"
+                stroke-width="1.2" stroke-linejoin="round" />
+              <path
+                d="M6 5.5c.2.5.5 1 .9 1.4.4.4.9.7 1.4.9.2-.2.4-.5.7-.6.2-.1.5 0 .7.2l.8.8c.2.2.2.5 0 .7-.3.3-.7.6-1.1.6-1 0-2.5-1-3.4-1.9S4.8 5.7 4.8 4.7c0-.4.3-.8.6-1.1.2-.2.5-.2.7 0l.8.8c.2.2.2.5.1.7-.1.2-.2.5-.2.7"
+                stroke="rgba(255,255,255,0.6)" stroke-width="1.1" stroke-linecap="round" />
+            </svg>
+          </a>
+          <!-- GitHub -->
+          <a href="https://github.com/tkmaster1/tkmaster-web" target="_blank" rel="noopener" class="social-link"
+            title="GitHub">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M8 1.5a6.5 6.5 0 00-2.055 12.67c.325.06.445-.14.445-.31v-1.09c-1.806.393-2.188-.875-2.188-.875-.295-.75-.72-.95-.72-.95-.59-.403.044-.395.044-.395.65.046 1 .67 1 .67.58 1 1.52.71 1.89.542.059-.422.227-.71.413-.873C5.29 12.41 3.57 11.77 3.57 8.95c0-.82.293-1.49.773-2.015-.077-.19-.335-.954.074-1.99 0 0 .63-.202 2.063.77A7.17 7.17 0 018 5.51c.638.003 1.28.086 1.88.253 1.43-.972 2.058-.77 2.058-.77.41 1.037.152 1.8.075 1.99.482.525.772 1.195.772 2.015 0 2.828-1.723 3.45-3.365 3.632.265.228.5.677.5 1.364v2.023c0 .172.118.374.448.31A6.5 6.5 0 008 1.5z"
+                fill="rgba(255,255,255,0.6)" />
+            </svg>
+          </a>
+        </div>
+        </p>
+      </div>
+      <div>
+        <div class="footer-col-title">Empresa</div>
+        <ul class="footer-links">
+          <li><a href="#sobre">Sobre a TKMaster</a></li>
+          <li><a href="#como-funciona">Como Funciona</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Para Empresas</div>
+        <ul class="footer-links">
+          <li><a href="#servicos">Alocação de TI</a></li>
+          <li><a href="#servicos">Gestão de Contratos</a></li>
+          <li><a href="#servicos">Gerência de Contas</a></li>
+          <li><a href="#servicos">Desenvolvimento</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Para Profissionais</div>
+        <ul class="footer-links">
+          <li><a href="https://forms.gle/iVuhzTtGr4wwKFxN7" target="_blank" rel="noopener">Cadastre seu Perfil</a></li>
+          <li><a href="tkmaster_talentos.html">Banco de Talentos</a></li>
+          <li><a href="tkmaster_talentos.html#como-funciona">Como Funciona o PJ</a></li>
+          <li><a href="tkmaster_talentos.html#garantias">Plano de Carreira</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 <span>TKMaster</span> Consultoria e Sistemas · Brasil</div>
+      <div class="footer-copy">Todos os direitos reservados</div>
+    </div>
+  </footer>
 
 </body>
+
 </html>
