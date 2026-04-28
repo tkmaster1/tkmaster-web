@@ -26,6 +26,8 @@
 | `og-image.jpg` | Imagem de prévia para WhatsApp, LinkedIn e Facebook (1200×630px) |
 | `cookie-banner.html` | Snippet do banner de cookies — já embutido nas páginas |
 
+> **Botão WhatsApp flutuante** — embutido diretamente nas páginas antes do `</body>`. Número configurado: `+55 21 98993-4272`. Para alterar, busque `wa.me/5521989934272` nos arquivos HTML e substitua pelo novo número.
+
 ---
 
 ## 🛠 Tecnologias
@@ -102,6 +104,7 @@ Após publicar, cadastre o sitemap em:
 | Página 404 personalizada | ✅ Concluído |
 | SEO (sitemap + robots.txt) | ✅ Concluído |
 | Domínio e hospedagem | 🔲 Pendente |
+| Botão WhatsApp flutuante | ✅ Concluído |
 | Google Search Console | 🔲 Pendente |
 
 ---
