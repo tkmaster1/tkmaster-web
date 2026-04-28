@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidade — TKMasters Consultoria e Sistemas</title>
+  <meta name="description" content="Política de Privacidade da TKMasters. Saiba como coletamos, usamos e protegemos seus dados conforme a LGPD.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.tkmasters.com.br/tkmaster_privacidade.html">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+  <meta name="theme-color" content="#0B1D3A">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #0B1D3A;
+      --red:        #C0151A;
+      --white:      #FFFFFF;
+      --gray:       #9A9A94;
+      --gray-light: #E8E8E6;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body:    'Barlow', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    /* NAV */
+    nav {
+      background: var(--navy);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      padding: 0 48px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-text {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 0.06em;
+      color: var(--white);
+    }
+
+    .logo-sub {
+      font-family: var(--font-display);
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gray);
+      display: block;
+    }
+
+    /* HERO */
+    .page-hero {
+      background: var(--navy);
+      padding: 64px 48px 56px;
+      border-bottom: 3px solid var(--red);
+    }
+
+    .page-hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 16px;
+    }
+
+    .page-hero-label::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--red);
+    }
+
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(40px, 6vw, 64px);
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .page-hero-meta {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.03em;
+    }
+
+    /* CONTENT */
+    .content-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 64px 48px 96px;
+    }
+
+    .section-block {
+      margin-bottom: 48px;
+    }
+
+    .section-block h2 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--navy);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--gray-light);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-block h2::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 18px;
+      background: var(--red);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .section-block p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 12px;
+    }
+
+    .section-block ul {
+      list-style: none;
+      margin: 12px 0;
+    }
+
+    .section-block ul li {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #444;
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 6px;
+    }
+
+    .section-block ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--red);
+      font-weight: 600;
+    }
+
+    .highlight-box {
+      background: #F4F6FA;
+      border-left: 3px solid var(--red);
+      border-radius: 0 6px 6px 0;
+      padding: 18px 22px;
+      margin: 20px 0;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* CONTACT BLOCK */
+    .contact-block {
+      background: var(--navy);
+      border-radius: 8px;
+      padding: 32px 36px;
+      margin-top: 48px;
+    }
+
+    .contact-block h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 20px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .contact-block p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.8;
+      margin-bottom: 4px;
+    }
+
+    .contact-block a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(192,21,26,0.4);
+      transition: color 0.2s;
+    }
+
+    .contact-block a:hover { color: var(--white); }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      padding: 28px 48px;
+      text-align: center;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.04em;
+    }
+
+    .footer-copy a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+    }
+
+    .footer-copy a:hover { color: var(--white); }
+
+    @media (max-width: 640px) {
+      nav { padding: 0 24px; }
+      .page-hero { padding: 48px 24px 40px; }
+      .content-wrap { padding: 48px 24px 72px; }
+      footer { padding: 24px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
+        <circle cx="18" cy="18" r="14" stroke="white" stroke-width="1.5"/>
+        <ellipse cx="18" cy="18" rx="7" ry="14" stroke="white" stroke-width="1.5"/>
+        <line x1="4" y1="18" x2="32" y2="18" stroke="white" stroke-width="1.5"/>
+        <line x1="18" y1="4" x2="18" y2="32" stroke="white" stroke-width="1.5"/>
+        <path d="M6 11h24M6 25h24" stroke="white" stroke-width="1.5"/>
+      </svg>
+      <div>
+        <div class="logo-text">TKMASTERS</div>
+        <div class="logo-sub">Consultoria e Sistemas</div>
+      </div>
+    </a>
+  </nav>
+
+  <div class="page-hero">
+    <div class="page-hero-label">Legal</div>
+    <h1>Política de<br>Privacidade</h1>
+    <p class="page-hero-meta">Última atualização: abril de 2026 &nbsp;·&nbsp; TKMasters Consultoria e Sistemas</p>
+  </div>
+
+  <div class="content-wrap">
+
+    <div class="section-block">
+      <p>A TKMasters Consultoria e Sistemas respeita a privacidade de quem acessa este site e está comprometida com a proteção dos seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).</p>
+      <p>Esta política explica quais dados coletamos, como os utilizamos e quais são os seus direitos como titular.</p>
+    </div>
+
+    <div class="section-block">
+      <h2>1. Quais dados coletamos</h2>
+      <p>Coletamos dados apenas quando você os fornece voluntariamente ou quando são gerados pela sua navegação no site:</p>
+      <ul>
+        <li><strong>Formulários de contato e cadastro:</strong> nome, e-mail, telefone, área de atuação e informações profissionais que você preenche.</li>
+        <li><strong>Navegação:</strong> páginas visitadas, tempo de sessão e tipo de dispositivo, coletados via cookies de análise.</li>
+        <li><strong>Comunicações:</strong> mensagens enviadas via WhatsApp ou e-mail para nossa equipe.</li>
+      </ul>
+      <div class="highlight-box">
+        <p>Não coletamos dados sensíveis (origem racial, saúde, biometria etc.) e não vendemos nem compartilhamos seus dados com terceiros para fins comerciais.</p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <h2>2. Como usamos seus dados</h2>
+      <ul>
+        <li>Responder contatos e solicitações enviadas por você.</li>
+        <li>Avaliar cadastros de profissionais para o banco de talentos.</li>
+        <li>Entrar em contato quando surgir uma oportunidade compatível com seu perfil.</li>
+        <li>Melhorar a experiência de navegação com base em dados agregados e anônimos.</li>
+        <li>Cumprir obrigações legais quando exigido.</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <h2>3. Cookies</h2>
+      <p>Este site utiliza cookies para funcionamento básico e análise de tráfego. Você pode recusar cookies não essenciais pelo banner exibido na primeira visita ou pelas configurações do seu navegador.</p>
+      <ul>
+        <li><strong>Cookies essenciais:</strong> necessários para o funcionamento do site.</li>
+        <li><strong>Cookies de análise:</strong> ajudam a entender como o site é utilizado, sem identificar você pessoalmente.</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <h2>4. Compartilhamento de dados</h2>
+      <p>Seus dados não são vendidos. Podemos compartilhá-los apenas:</p>
+      <ul>
+        <li>Com empresas clientes, somente quando você, como profissional, for apresentado para uma oportunidade — e com seu conhecimento.</li>
+        <li>Com prestadores de serviço técnico (hospedagem, e-mail) que atuam sob nosso controle e com obrigação de confidencialidade.</li>
+        <li>Por exigência legal ou ordem judicial.</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <h2>5. Por quanto tempo guardamos seus dados</h2>
+      <p>Dados de cadastro de profissionais são mantidos enquanto houver interesse mútuo ou até que você solicite a exclusão. Dados de contato são mantidos pelo tempo necessário para atender sua solicitação. Dados de navegação seguem a política da ferramenta utilizada, geralmente até 26 meses.</p>
+    </div>
+
+    <div class="section-block">
+      <h2>6. Seus direitos (LGPD)</h2>
+      <p>Como titular dos dados, você tem direito a:</p>
+      <ul>
+        <li>Confirmar se tratamos seus dados e acessá-los.</li>
+        <li>Corrigir dados incompletos, inexatos ou desatualizados.</li>
+        <li>Solicitar a exclusão dos seus dados.</li>
+        <li>Revogar o consentimento a qualquer momento.</li>
+        <li>Solicitar informações sobre compartilhamento com terceiros.</li>
+      </ul>
+    </div>
+
+    <div class="section-block">
+      <h2>7. Alterações nesta política</h2>
+      <p>Esta política pode ser atualizada periodicamente. A data da última revisão está sempre indicada no topo desta página.</p>
+    </div>
+
+    <div class="contact-block">
+      <h3>Fale sobre seus dados</h3>
+      <p>TKMasters Consultoria e Sistemas · Rio de Janeiro, RJ · Brasil</p>
+      <p>E-mail: <a href="mailto:privacidade@tkmasters.com.br">privacidade@tkmasters.com.br</a></p>
+      <p>WhatsApp: <a href="https://wa.me/5521989934272" target="_blank" rel="noopener">(21) 98993-4272</a></p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p class="footer-copy">
+      © 2026 <span style="color:#C0151A;font-weight:600;">TKMaster</span> Consultoria e Sistemas · Brasil
+      &nbsp;·&nbsp; <a href="index.html">Voltar ao site</a>
+    </p>
+  </footer>
+
+</body>
+</html>

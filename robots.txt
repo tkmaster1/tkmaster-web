@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /favicons/
+
+Sitemap: https://www.tkmasters.com.br/sitemap.xml

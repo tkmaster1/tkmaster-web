@@ -1,0 +1,168 @@
+<!-- ============================================================
+     COOKIE BANNER — TKMasters
+     Adicione este bloco antes de </body> em todas as páginas.
+     O banner só aparece na primeira visita. Após aceitar ou
+     recusar, fica guardado por 365 dias.
+     ============================================================ -->
+
+<style>
+  #cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: #0B1D3A;
+    border-top: 2px solid #C0151A;
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    box-shadow: 0 -4px 32px rgba(0,0,0,0.25);
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  #cookie-banner.visible {
+    transform: translateY(0);
+  }
+
+  .cookie-text {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.6);
+    flex: 1;
+    min-width: 220px;
+  }
+
+  .cookie-text strong {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .cookie-text a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s;
+  }
+
+  .cookie-text a:hover { color: #fff; }
+
+  .cookie-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .cookie-btn {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 9px 22px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
+  }
+
+  .cookie-btn:hover { transform: translateY(-1px); }
+
+  .cookie-btn-accept {
+    background: #C0151A;
+    color: #fff;
+  }
+
+  .cookie-btn-accept:hover { background: #E01A20; }
+
+  .cookie-btn-decline {
+    background: transparent;
+    color: rgba(255,255,255,0.45);
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .cookie-btn-decline:hover {
+    border-color: rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.7);
+  }
+
+  @media (max-width: 600px) {
+    #cookie-banner {
+      padding: 16px 20px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .cookie-actions { width: 100%; }
+    .cookie-btn { flex: 1; text-align: center; }
+  }
+</style>
+
+<div id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p class="cookie-text">
+    <strong>Usamos cookies</strong> para melhorar sua experiência e analisar o tráfego do site.
+    Ao clicar em "Aceitar", você concorda com o uso de cookies conforme nossa
+    <a href="tkmaster_privacidade.html">Política de Privacidade</a>.
+  </p>
+  <div class="cookie-actions">
+    <button class="cookie-btn cookie-btn-decline" id="cookie-decline">Só essenciais</button>
+    <button class="cookie-btn cookie-btn-accept" id="cookie-accept">Aceitar</button>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var COOKIE_KEY = 'tkmasters_cookie_consent';
+    var EXPIRY_DAYS = 365;
+    var banner = document.getElementById('cookie-banner');
+
+    function getConsent() {
+      try {
+        var item = localStorage.getItem(COOKIE_KEY);
+        if (!item) return null;
+        var data = JSON.parse(item);
+        if (Date.now() > data.expires) {
+          localStorage.removeItem(COOKIE_KEY);
+          return null;
+        }
+        return data.value;
+      } catch (e) { return null; }
+    }
+
+    function setConsent(value) {
+      try {
+        localStorage.setItem(COOKIE_KEY, JSON.stringify({
+          value: value,
+          expires: Date.now() + EXPIRY_DAYS * 24 * 60 * 60 * 1000
+        }));
+      } catch (e) {}
+    }
+
+    function hideBanner() {
+      banner.classList.remove('visible');
+    }
+
+    if (getConsent() !== null) return;
+
+    setTimeout(function () {
+      banner.classList.add('visible');
+    }, 800);
+
+    document.getElementById('cookie-accept').addEventListener('click', function () {
+      setConsent('accepted');
+      hideBanner();
+    });
+
+    document.getElementById('cookie-decline').addEventListener('click', function () {
+      setConsent('declined');
+      hideBanner();
+    });
+  })();
+</script>

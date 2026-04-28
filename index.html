@@ -5,6 +5,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TKMaster — Consultoria e Sistemas</title>
+
+  <!-- ── SEO ── -->
+  <meta name="description" content="TKMaster conecta empresas a profissionais de TI qualificados — com agilidade, transparência e acompanhamento ativo do seu Gerente de Contas.">
+  <meta name="keywords" content="outsourcing TI, body shop, alocação de profissionais, consultoria tecnologia, desenvolvedores PJ, tech talent, Rio de Janeiro">
+  <meta name="author" content="TKMaster Consultoria e Sistemas">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.tkmasters.com.br/">
+
+  <!-- ── Open Graph (WhatsApp, LinkedIn, Facebook) ── -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TKMaster">
+  <meta property="og:url" content="https://www.tkmasters.com.br/">
+  <meta property="og:title" content="TKMaster — Outsourcing de TI com acompanhamento real">
+  <meta property="og:description" content="Conectamos empresas a profissionais de TI qualificados. Do pedido ao profissional alocado em dias — com Gerente de Contas dedicado e gestão ativa durante todo o projeto.">
+  <meta property="og:image" content="https://www.tkmasters.com.br/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="TKMaster — Consultoria e Sistemas de TI">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- ── Twitter Card (também usado pelo LinkedIn em alguns casos) ── -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TKMaster — Outsourcing de TI com acompanhamento real">
+  <meta name="twitter:description" content="Conectamos empresas a profissionais de TI qualificados. Do pedido ao profissional alocado em dias — com Gerente de Contas dedicado e gestão ativa durante todo o projeto.">
+  <meta name="twitter:image" content="https://www.tkmasters.com.br/og-image.jpg">
+
   <link
     href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500;600&display=swap"
     rel="stylesheet">
@@ -395,70 +421,141 @@
     }
 
     /* ── STEPS ── */
+    /* ── STEPPER VISUAL ── */
     .steps-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--gray-light);
-      border: 1px solid var(--gray-light);
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .step {
-      background: var(--white);
-      padding: 36px 28px;
+      gap: 0;
       position: relative;
     }
 
-    .step-num {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: 64px;
-      color: var(--gray-light);
-      line-height: 1;
+    /* linha conectora entre os passos */
+    .steps-grid::before {
+      content: '';
       position: absolute;
-      top: 16px;
-      right: 20px;
+      top: 52px;
+      left: calc(12.5% + 4px);
+      right: calc(12.5% + 4px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--navy) 0%, var(--red) 50%, var(--navy) 100%);
+      z-index: 0;
     }
 
-    .step-icon {
-      width: 44px;
-      height: 44px;
-      background: var(--navy);
-      border-radius: 6px;
+    .step {
+      background: transparent;
+      padding: 0 16px 0 16px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* badge numerado com círculo */
+    .step-badge {
+      position: relative;
+      z-index: 1;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 3px solid var(--gray-light);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 20px;
+      margin-bottom: 28px;
+      transition: border-color 0.25s, background 0.25s;
+      flex-shrink: 0;
+    }
+
+    .step-badge-num {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 22px;
+      color: var(--gray);
+      line-height: 1;
+      transition: color 0.25s;
+    }
+
+    .step:hover .step-badge {
+      border-color: var(--red);
+      background: var(--red);
+    }
+
+    .step:hover .step-badge-num {
+      color: var(--white);
+    }
+
+    /* card de conteúdo abaixo do badge */
+    .step-card {
+      background: var(--white);
+      border: 1px solid var(--gray-light);
+      border-radius: 10px;
+      padding: 24px 20px;
+      width: 100%;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+    }
+
+    .step:hover .step-card {
+      border-color: var(--red);
+      box-shadow: 0 8px 32px rgba(192, 21, 26, 0.12);
+      transform: translateY(-3px);
+    }
+
+    .step-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--navy);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+      transition: background 0.25s;
+    }
+
+    .step:hover .step-icon {
+      background: var(--red);
+    }
+
+    .step-num {
+      display: none; /* substituído pelo step-badge */
     }
 
     .step-title {
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: 18px;
+      font-size: 17px;
       text-transform: uppercase;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.03em;
       color: var(--navy);
       margin-bottom: 10px;
+      line-height: 1.2;
     }
 
     .step-desc {
       font-size: 13px;
-      line-height: 1.6;
+      line-height: 1.65;
       color: var(--gray);
     }
 
-    .step-highlight {
+    /* destaque vermelho no passo 4 (GC) */
+    .step-highlight .step-badge {
+      border-color: var(--red);
       background: var(--red);
     }
 
-    .step-highlight .step-num {
-      color: rgba(255, 255, 255, 0.15);
+    .step-highlight .step-badge-num {
+      color: var(--white);
+    }
+
+    .step-highlight .step-card {
+      background: var(--navy);
+      border-color: var(--navy);
     }
 
     .step-highlight .step-icon {
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255,255,255,0.12);
     }
 
     .step-highlight .step-title {
@@ -466,7 +563,16 @@
     }
 
     .step-highlight .step-desc {
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(255,255,255,0.6);
+    }
+
+    .step-highlight:hover .step-card {
+      border-color: var(--red);
+      box-shadow: 0 8px 32px rgba(192, 21, 26, 0.25);
+    }
+
+    .step-highlight:hover .step-icon {
+      background: var(--red);
     }
 
     /* ── SERVICES ── */
@@ -828,6 +934,11 @@
 
       .steps-grid {
         grid-template-columns: 1fr 1fr;
+        row-gap: 32px;
+      }
+
+      .steps-grid::before {
+        display: none;
       }
 
       .services-grid {
@@ -890,6 +1001,27 @@
 
       .steps-grid {
         grid-template-columns: 1fr;
+        row-gap: 32px;
+      }
+
+      .steps-grid::before {
+        display: none;
+      }
+
+      .step {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 16px;
+        text-align: left;
+      }
+
+      .step-badge {
+        margin-bottom: 0;
+        flex-shrink: 0;
+      }
+
+      .step-card {
+        flex: 1;
       }
 
       .diff-grid {
@@ -1160,7 +1292,7 @@
     /* ── STACKS SECTION ── */
     .stacks-section {
       padding: 80px 60px;
-      background: var(--off-white);
+      background: var(--white);
     }
 
     .stacks-inner {
@@ -1292,6 +1424,7 @@
     <ul class="nav-links" id="nav-links">
       <li><a href="#como-funciona">Como Funciona</a></li>
       <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#stacks">Tecnologias</a></li>
       <li><a href="tkmaster_talentos.html">Profissionais</a></li>
       <li class="nav-dropdown" id="dd-institucional">
         <a href="#" onclick="return false;">Institucional</a>
@@ -1450,54 +1583,80 @@
   <!-- ── COMO FUNCIONA ── -->
   <section class="section section-alt" id="como-funciona">
     <div class="section-label">Processo</div>
-    <h2 class="section-title">Como funciona<br>do pedido ao go-live</h2>
-    <p class="section-sub">Quatro etapas simples. Nenhuma dor de cabeça com recrutamento.</p>
+    <h2 class="section-title">Como funciona<br>para empresas</h2>
+    <p class="section-sub">Do pedido ao profissional alocado em dias — não em meses.</p>
 
     <div class="steps-grid">
+
+      <!-- PASSO 1 -->
       <div class="step">
-        <div class="step-num">01</div>
-        <div class="step-icon">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M4 4h12v2H4zM4 9h12v2H4zM4 14h8v2H4z" fill="white" opacity="0.8" />
-          </svg>
+        <div class="step-badge">
+          <span class="step-badge-num">1</span>
         </div>
-        <div class="step-title">Briefing do Perfil</div>
-        <div class="step-desc">Você nos conta o que precisa: stack, senioridade, tempo de projeto. Nós escutamos com
-          atenção.</div>
+        <div class="step-card">
+          <div class="step-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M4 4h12v2H4zM4 9h8v2H4zM4 14h6v2H4z" fill="white" opacity="0.9" />
+              <path d="M14 12l2 2-2 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="step-title">Você abre<br>a demanda</div>
+          <div class="step-desc">Nos conta o que precisa: stack, senioridade, regime e prazo. Simples assim — nenhum formulário extenso.</div>
+        </div>
       </div>
+
+      <!-- PASSO 2 -->
+      <div class="step">
+        <div class="step-badge">
+          <span class="step-badge-num">2</span>
+        </div>
+        <div class="step-card">
+          <div class="step-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="10" cy="7" r="3.5" stroke="white" stroke-width="1.5"/>
+              <path d="M4 17c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M15 5l1.5 1.5L15 8" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="step-title">TKMaster mapeia<br>o perfil</div>
+          <div class="step-desc">Cruzamos sua demanda com nosso banco de talentos qualificados — avaliados técnica e comportamentalmente.</div>
+        </div>
+      </div>
+
+      <!-- PASSO 3 -->
+      <div class="step">
+        <div class="step-badge">
+          <span class="step-badge-num">3</span>
+        </div>
+        <div class="step-card">
+          <div class="step-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M3 10l5 5L17 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="step-title">Apresentamos<br>o profissional</div>
+          <div class="step-desc">Você recebe o perfil e decide. Aprovado, cuidamos de toda a formalização contratual PJ — sem burocracia.</div>
+        </div>
+      </div>
+
+      <!-- PASSO 4 -->
       <div class="step step-highlight">
-        <div class="step-num">02</div>
-        <div class="step-icon">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <circle cx="10" cy="7" r="4" stroke="white" stroke-width="1.5" />
-            <path d="M3 18c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="white" stroke-width="1.5" stroke-linecap="round" />
-          </svg>
+        <div class="step-badge">
+          <span class="step-badge-num">4</span>
         </div>
-        <div class="step-title">Match com o Banco</div>
-        <div class="step-desc">Consultamos nosso banco de talentos qualificados e apresentamos candidatos já avaliados.
+        <div class="step-card">
+          <div class="step-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="10" cy="10" r="7.5" stroke="white" stroke-width="1.5"/>
+              <path d="M10 6v4l2.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="16" cy="4" r="2.5" fill="#C0151A" stroke="white" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="step-title">Alocação ativa<br>com GC</div>
+          <div class="step-desc">Seu Gerente de Contas acompanha o dia a dia do projeto. Ocorrências resolvidas em até 24h — você tem um parceiro, não só um fornecedor.</div>
         </div>
       </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <div class="step-icon">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M5 10l4 4 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </div>
-        <div class="step-title">Aprovação e Contrato</div>
-        <div class="step-desc">Você aprova o perfil. A TKMaster cuida de toda a formalização contratual PJ.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">04</div>
-        <div class="step-icon">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <circle cx="10" cy="10" r="8" stroke="white" stroke-width="1.5" />
-            <path d="M10 6v4l3 3" stroke="white" stroke-width="1.5" stroke-linecap="round" />
-          </svg>
-        </div>
-        <div class="step-title">Gestão Contínua</div>
-        <div class="step-desc">Seu Gerente de Contas acompanha o dia a dia. Ocorrências tratadas em até 24h.</div>
-      </div>
+
     </div>
   </section>
 
@@ -1960,7 +2119,7 @@
   <div class="cta-band" id="contato">
     <div class="cta-title">Pronto para contratar<br>sem complicação?</div>
     <div class="cta-right">
-      <a href="mailto:contato@tkmaster.com.br" class="btn-white">Falar com a TKMaster</a>
+      <a href="mailto:tkmaster.consultoria@gmail.com" class="btn-white">Falar com a TKMaster</a>
       <span class="cta-note">Resposta em até 1 dia útil</span>
     </div>
   </div>
@@ -2062,9 +2221,179 @@
     </div>
     <div class="footer-bottom">
       <div class="footer-copy">© 2026 <span>TKMaster</span> Consultoria e Sistemas · Brasil</div>
-      <div class="footer-copy">Todos os direitos reservados</div>
+      <div class="footer-copy">Todos os direitos reservados &nbsp;·&nbsp; <a href="tkmaster_privacidade.html">Política de Privacidade</a></div>
     </div>
   </footer>
+
+
+<!-- ============================================================
+     COOKIE BANNER — TKMasters
+     Adicione este bloco antes de </body> em todas as páginas.
+     O banner só aparece na primeira visita. Após aceitar ou
+     recusar, fica guardado por 365 dias.
+     ============================================================ -->
+
+<style>
+  #cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: #0B1D3A;
+    border-top: 2px solid #C0151A;
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    box-shadow: 0 -4px 32px rgba(0,0,0,0.25);
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  #cookie-banner.visible {
+    transform: translateY(0);
+  }
+
+  .cookie-text {
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.6);
+    flex: 1;
+    min-width: 220px;
+  }
+
+  .cookie-text strong {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .cookie-text a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s;
+  }
+
+  .cookie-text a:hover { color: #fff; }
+
+  .cookie-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .cookie-btn {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 9px 22px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
+  }
+
+  .cookie-btn:hover { transform: translateY(-1px); }
+
+  .cookie-btn-accept {
+    background: #C0151A;
+    color: #fff;
+  }
+
+  .cookie-btn-accept:hover { background: #E01A20; }
+
+  .cookie-btn-decline {
+    background: transparent;
+    color: rgba(255,255,255,0.45);
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .cookie-btn-decline:hover {
+    border-color: rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.7);
+  }
+
+  @media (max-width: 600px) {
+    #cookie-banner {
+      padding: 16px 20px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .cookie-actions { width: 100%; }
+    .cookie-btn { flex: 1; text-align: center; }
+  }
+</style>
+
+<div id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <p class="cookie-text">
+    <strong>Usamos cookies</strong> para melhorar sua experiência e analisar o tráfego do site.
+    Ao clicar em "Aceitar", você concorda com o uso de cookies conforme nossa
+    <a href="tkmaster_privacidade.html">Política de Privacidade</a>.
+  </p>
+  <div class="cookie-actions">
+    <button class="cookie-btn cookie-btn-decline" id="cookie-decline">Só essenciais</button>
+    <button class="cookie-btn cookie-btn-accept" id="cookie-accept">Aceitar</button>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var COOKIE_KEY = 'tkmasters_cookie_consent';
+    var EXPIRY_DAYS = 365;
+    var banner = document.getElementById('cookie-banner');
+
+    function getConsent() {
+      try {
+        var item = localStorage.getItem(COOKIE_KEY);
+        if (!item) return null;
+        var data = JSON.parse(item);
+        if (Date.now() > data.expires) {
+          localStorage.removeItem(COOKIE_KEY);
+          return null;
+        }
+        return data.value;
+      } catch (e) { return null; }
+    }
+
+    function setConsent(value) {
+      try {
+        localStorage.setItem(COOKIE_KEY, JSON.stringify({
+          value: value,
+          expires: Date.now() + EXPIRY_DAYS * 24 * 60 * 60 * 1000
+        }));
+      } catch (e) {}
+    }
+
+    function hideBanner() {
+      banner.classList.remove('visible');
+    }
+
+    if (getConsent() !== null) return;
+
+    setTimeout(function () {
+      banner.classList.add('visible');
+    }, 800);
+
+    document.getElementById('cookie-accept').addEventListener('click', function () {
+      setConsent('accepted');
+      hideBanner();
+    });
+
+    document.getElementById('cookie-decline').addEventListener('click', function () {
+      setConsent('declined');
+      hideBanner();
+    });
+  })();
+</script>
 
 </body>
 
