@@ -1,0 +1,11 @@
+# Netlify configuration — TKMaster Web
+# Site estático: sem build, publica direto da raiz do repositório.
+
+[build]
+  publish = "."    # index.html está na raiz
+  command = ""     # nenhum comando de build necessário
+
+[[redirects]]
+  from   = "/*"
+  to     = "/tkmaster_404.html"
+  status = 404
