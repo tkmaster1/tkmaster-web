@@ -117,7 +117,7 @@ Após publicar, cadastre o sitemap em:
 **TKMaster Consultoria e Sistemas** — Rio de Janeiro, RJ, Brasil  
 Outsourcing de TI com Gerente de Contas dedicado e gestão ativa durante todo o projeto.
 
-🌐 [https://tkmaster-web.netlify.app](https://tkmaster-web.netlify.app)  
+🌐 [tkmaster-web.netlify.app](https://tkmaster-web.netlify.app)  
 💼 [LinkedIn](https://www.linkedin.com/company/tkmasterconsultorias/)  
 📺 [YouTube](https://www.youtube.com/@TKMasterConsultorias)  
 📸 [Instagram](https://www.instagram.com/tkmaster.consultoria)
