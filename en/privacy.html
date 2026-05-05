@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Política de Privacidade — TKMaster Consultoria e Sistemas</title>
-  <meta name="description"
-    content="Política de Privacidade da TKMaster. Saiba como coletamos, usamos e protegemos seus dados conforme a LGPD.">
+  <title>Privacy Policy — TKMaster Consulting and Systems</title>
+  <meta name="description" content="TKMaster Privacy Policy. Learn how we collect, use and protect your data.">
   <meta name="robots" content="index, follow">
 
   <!-- ── SEO ── -->
@@ -14,7 +13,7 @@
     content="TKMaster conecta empresas a profissionais de TI qualificados — com agilidade, transparência e acompanhamento ativo do seu Gerente de Contas.">
   <meta name="keywords"
     content="outsourcing TI, body shop, alocação de profissionais, consultoria tecnologia, desenvolvedores PJ, tech talent, Rio de Janeiro">
-  <meta name="author" content="TKMaster Consultoria e Sistemas">
+  <meta name="author" content="TKMaster Consulting and Systems">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.tkmasters.com.br/">
 
@@ -29,7 +28,7 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="TKMaster — Consultoria e Sistemas de TI">
-  <meta property="og:locale" content="pt_BR">
+  <meta property="og:locale" content="en_US">
 
   <!-- ── Twitter Card (também usado pelo LinkedIn em alguns casos) ── -->
   <meta name="twitter:card" content="summary_large_image">
@@ -38,9 +37,10 @@
     content="Conectamos empresas a profissionais de TI qualificados. Do pedido ao profissional alocado em dias — com Gerente de Contas dedicado e gestão ativa durante todo o projeto.">
   <meta name="twitter:image" content="https://www.tkmasters.com.br/og-image.jpg">
 
-  <link rel="canonical" href="https://www.tkmasters.com.br/tkmaster_privacidade.html">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
-  <meta name="theme-color" content="#0B1D3A">
+  <link rel="canonical" href="https://www.tkmasters.com.br/en/privacy.html">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicons/favicon-16x16.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
   <link
     href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500;600&display=swap"
     rel="stylesheet">
@@ -76,6 +76,7 @@
       height: 64px;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       padding: 0 48px;
       position: sticky;
       top: 0;
@@ -303,13 +304,55 @@
         padding: 24px;
       }
     }
+
+    /* ── SELETOR DE IDIOMA ── */
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      margin-left: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 3px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .lang-switcher a {
+      font-family: var(--font-display);
+      font-size: 11px !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.1em !important;
+      text-transform: uppercase !important;
+      color: rgba(255, 255, 255, 0.45) !important;
+      text-decoration: none;
+      padding: 4px 9px !important;
+      transition: background 0.2s, color 0.2s !important;
+      line-height: 1.8;
+    }
+
+    .lang-switcher a:hover {
+      color: var(--white) !important;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .lang-switcher a.active {
+      background: var(--red);
+      color: var(--white) !important;
+    }
+
+    .lang-sep {
+      width: 1px;
+      height: 16px;
+      background: rgba(255, 255, 255, 0.15);
+      flex-shrink: 0;
+    }
   </style>
 </head>
 
 <body>
 
   <nav>
-    <a href="index.html" class="nav-logo">
+    <a href="../en/index.html" class="nav-logo">
       <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
         <circle cx="18" cy="18" r="14" stroke="white" stroke-width="1.5" />
         <ellipse cx="18" cy="18" rx="7" ry="14" stroke="white" stroke-width="1.5" />
@@ -319,107 +362,111 @@
       </svg>
       <div>
         <div class="logo-text">TKMASTER</div>
-        <div class="logo-sub">Consultoria e Sistemas</div>
+        <div class="logo-sub">Consulting and Systems</div>
       </div>
     </a>
+    <ul class="lang-switcher" style="list-style:none;margin:0;padding:0;">
+      <a href="../privacidade.html" aria-label="Português">PT</a>
+      <span class="lang-sep"></span>
+      <a href="#" class="active" aria-label="English">EN</a>
+    </ul>
   </nav>
 
   <div class="page-hero">
     <div class="page-hero-label">Legal</div>
-    <h1>Política de<br>Privacidade</h1>
-    <p class="page-hero-meta">Última atualização: abril de 2026 &nbsp;·&nbsp; TKMaster Consultoria e Sistemas</p>
+    <h1>Privacy<br>Policy</h1>
+    <p class="page-hero-meta">Last updated: April 2026 &nbsp;·&nbsp; TKMaster Consulting and Systems</p>
   </div>
 
   <div class="content-wrap">
 
     <div class="section-block">
-      <p>A TKMaster Consultoria e Sistemas respeita a privacidade de quem acessa este site e está comprometida com a
-        proteção dos seus dados pessoais, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 —
-        LGPD).</p>
-      <p>Esta política explica quais dados coletamos, como os utilizamos e quais são os seus direitos como titular.</p>
+      <p>TKMaster Consulting and Systems respects the privacy of those who access this website and is committed to
+        protecting your personal data, in compliance with the Brazilian General Data Protection Law (LGPD — Law No.
+        13,709/2018).</p>
+      <p>This policy explains what data we collect, how we use it and what your rights are as a data subject.</p>
     </div>
 
     <div class="section-block">
-      <h2>1. Quais dados coletamos</h2>
-      <p>Coletamos dados apenas quando você os fornece voluntariamente ou quando são gerados pela sua navegação no site:
+      <h2>1. What data we collect</h2>
+      <p>We collect data only when you voluntarily provide it or when it is generated by your browsing:
       </p>
       <ul>
-        <li><strong>Formulários de contato e cadastro:</strong> nome, e-mail, telefone, área de atuação e informações
-          profissionais que você preenche.</li>
-        <li><strong>Navegação:</strong> páginas visitadas, tempo de sessão e tipo de dispositivo, coletados via cookies
-          de análise.</li>
-        <li><strong>Comunicações:</strong> mensagens enviadas via WhatsApp ou e-mail para nossa equipe.</li>
+        <li><strong>Contact and registration forms:</strong> name, email, phone, area of expertise and professional
+          information you fill in.</li>
+        <li><strong>Browsing:</strong> pages visited, session time and device type, collected via analytics cookies.
+        </li>
+        <li><strong>Communications:</strong> messages sent via WhatsApp or email to our team.</li>
       </ul>
       <div class="highlight-box">
-        <p>Não coletamos dados sensíveis (origem racial, saúde, biometria etc.) e não vendemos nem compartilhamos seus
-          dados com terceiros para fins comerciais.</p>
+        <p>We do not collect sensitive data (racial origin, health, biometrics, etc.) and we do not sell or share your
+          data with third parties for commercial purposes.</p>
       </div>
     </div>
 
     <div class="section-block">
-      <h2>2. Como usamos seus dados</h2>
+      <h2>2. How we use your data</h2>
       <ul>
-        <li>Responder contatos e solicitações enviadas por você.</li>
-        <li>Avaliar cadastros de profissionais para o banco de talentos.</li>
-        <li>Entrar em contato quando surgir uma oportunidade compatível com seu perfil.</li>
-        <li>Melhorar a experiência de navegação com base em dados agregados e anônimos.</li>
-        <li>Cumprir obrigações legais quando exigido.</li>
+        <li>Respond to contacts and requests submitted by you.</li>
+        <li>Evaluate professional registrations for the talent pool.</li>
+        <li>Reach out when a compatible opportunity arises for your profile.</li>
+        <li>Improve the browsing experience based on aggregated and anonymous data.</li>
+        <li>Comply with legal obligations when required.</li>
       </ul>
     </div>
 
     <div class="section-block">
       <h2>3. Cookies</h2>
-      <p>Este site utiliza cookies para funcionamento básico e análise de tráfego. Você pode recusar cookies não
-        essenciais pelo banner exibido na primeira visita ou pelas configurações do seu navegador.</p>
+      <p>This website uses cookies for basic functionality and traffic analysis. You can decline non-essential cookies
+        via the banner shown on your first visit or through your browser settings.</p>
       <ul>
-        <li><strong>Cookies essenciais:</strong> necessários para o funcionamento do site.</li>
-        <li><strong>Cookies de análise:</strong> ajudam a entender como o site é utilizado, sem identificar você
-          pessoalmente.</li>
+        <li><strong>Essential cookies:</strong> required for the website to function.</li>
+        <li><strong>Analytics cookies:</strong> help us understand how the site is used, without identifying you
+          personally.</li>
       </ul>
     </div>
 
     <div class="section-block">
-      <h2>4. Compartilhamento de dados</h2>
-      <p>Seus dados não são vendidos. Podemos compartilhá-los apenas:</p>
+      <h2>4. Data sharing</h2>
+      <p>Your data is not sold. We may share it only:</p>
       <ul>
-        <li>Com empresas clientes, somente quando você, como profissional, for apresentado para uma oportunidade — e com
-          seu conhecimento.</li>
-        <li>Com prestadores de serviço técnico (hospedagem, e-mail) que atuam sob nosso controle e com obrigação de
-          confidencialidade.</li>
-        <li>Por exigência legal ou ordem judicial.</li>
+        <li>With client companies, only when you, as a professional, are presented for an opportunity — and with your
+          knowledge.</li>
+        <li>With technical service providers (hosting, email) who operate under our control and with a confidentiality
+          obligation.</li>
+        <li>By legal requirement or court order.</li>
       </ul>
     </div>
 
     <div class="section-block">
-      <h2>5. Por quanto tempo guardamos seus dados</h2>
-      <p>Dados de cadastro de profissionais são mantidos enquanto houver interesse mútuo ou até que você solicite a
-        exclusão. Dados de contato são mantidos pelo tempo necessário para atender sua solicitação. Dados de navegação
-        seguem a política da ferramenta utilizada, geralmente até 26 meses.</p>
+      <h2>5. How long we keep your data</h2>
+      <p>Professional registration data is kept as long as there is mutual interest or until you request deletion.
+        Contact data is kept for as long as necessary to fulfill your request. Browsing data follows the tool's policy,
+        generally up to 26 months.</p>
     </div>
 
     <div class="section-block">
-      <h2>6. Seus direitos (LGPD)</h2>
-      <p>Como titular dos dados, você tem direito a:</p>
+      <h2>6. Your rights (LGPD)</h2>
+      <p>As a data subject, you have the right to:</p>
       <ul>
-        <li>Confirmar se tratamos seus dados e acessá-los.</li>
-        <li>Corrigir dados incompletos, inexatos ou desatualizados.</li>
-        <li>Solicitar a exclusão dos seus dados.</li>
-        <li>Revogar o consentimento a qualquer momento.</li>
-        <li>Solicitar informações sobre compartilhamento com terceiros.</li>
+        <li>Confirm whether we process your data and access it.</li>
+        <li>Correct incomplete, inaccurate or outdated data.</li>
+        <li>Request the deletion of your data.</li>
+        <li>Revoke consent at any time.</li>
+        <li>Request information about sharing with third parties.</li>
       </ul>
     </div>
 
     <div class="section-block">
-      <h2>7. Alterações nesta política</h2>
-      <p>Esta política pode ser atualizada periodicamente. A data da última revisão está sempre indicada no topo desta
-        página.</p>
+      <h2>7. Changes to this policy</h2>
+      <p>This policy may be updated periodically. The date of the last revision is always shown at the top of this page.
+      </p>
     </div>
 
     <div class="contact-block">
-      <h3>Fale sobre seus dados</h3>
-      <p>TKMaster Consultoria e Sistemas · Rio de Janeiro, RJ · Brasil</p>
-      <p>E-mail: <a href="mailto:tkmaster.consultoria@gmail.com?subject=Privacidade">tkmaster.consultoria@gmail.com
-          (assunto: privacidade)</a></p>
+      <h3>Talk about your data</h3>
+      <p>TKMaster Consulting and Systems · Rio de Janeiro, RJ · Brazil</p>
+      <p>E-mail: <a href="mailto:tkmaster.consultoria@gmail.com?subject=Privacy">privacy@tkmaster.com.br</a></p>
       <p>WhatsApp: <a href="https://wa.me/5521989934272" target="_blank" rel="noopener">(21) 98993-4272</a></p>
     </div>
 
@@ -427,8 +474,8 @@
 
   <footer>
     <p class="footer-copy">
-      © 2026 <span style="color:#C0151A;font-weight:600;">TKMaster</span> Consultoria e Sistemas · Brasil
-      &nbsp;·&nbsp; <a href="index.html">Voltar ao site</a>
+      © 2026 <span style="color:#C0151A;font-weight:600;">TKMaster</span> Consulting and Systems · Brazil
+      &nbsp;·&nbsp; <a href="../en/index.html">Back to site</a>
     </p>
   </footer>
 

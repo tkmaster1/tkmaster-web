@@ -1,42 +1,42 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Banco de Talentos — TKMaster Consultoria e Sistemas</title>
+  <title>Talent Pool — TKMaster Consulting and Systems</title>
 
   <!-- ── SEO ── -->
   <meta name="description"
     content="Cadastre-se no banco de talentos da TKMaster. Projetos reais, contratos PJ claros, suporte ativo e crescimento contínuo. Leva menos de 2 minutos.">
   <meta name="author" content="TKMaster Consultoria e Sistemas">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.tkmasters.com.br/tkmaster_talentos.html">
+  <link rel="canonical" href="https://www.tkmasters.com.br/en/talents.html">
 
   <!-- ── Open Graph (WhatsApp, LinkedIn, Facebook) ── -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="TKMaster">
-  <meta property="og:url" content="https://www.tkmasters.com.br/tkmaster_talentos.html">
+  <meta property="og:url" content="https://www.tkmasters.com.br/en/talents.html">
   <meta property="og:title" content="Trabalhe com a TKMaster — Banco de Talentos TI">
   <meta property="og:description"
-    content="Profissional de TI? Cadastre-se no nosso banco de talentos. Projetos reais, contrato PJ claro e um Gerente de Contas do seu lado.">
+    content="IT Professional? Join our talent pool. Real projects, clear PJ contract and a dedicated Account Manager by your side.">
   <meta property="og:image" content="https://www.tkmasters.com.br/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="TKMaster — Banco de Talentos TI">
-  <meta property="og:locale" content="pt_BR">
+  <meta property="og:locale" content="en_US">
 
   <!-- ── Twitter Card ── -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Trabalhe com a TKMaster — Banco de Talentos TI">
   <meta name="twitter:description"
-    content="Profissional de TI? Cadastre-se no nosso banco de talentos. Projetos reais, contrato PJ claro e um Gerente de Contas do seu lado.">
+    content="IT Professional? Join our talent pool. Real projects, clear PJ contract and a dedicated Account Manager by your side.">
   <meta name="twitter:image" content="https://www.tkmasters.com.br/og-image.jpg">
 
   <link
     href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500;600&display=swap"
     rel="stylesheet">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicons/favicon-16x16.png">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
   <style>
@@ -1627,6 +1627,56 @@
         padding: 0 20px 20px;
       }
     }
+
+    /* ── SELETOR DE IDIOMA ── */
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      margin-left: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 3px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .lang-switcher a {
+      font-family: var(--font-display);
+      font-size: 11px !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.1em !important;
+      text-transform: uppercase !important;
+      color: rgba(255, 255, 255, 0.45) !important;
+      text-decoration: none;
+      padding: 4px 9px !important;
+      transition: background 0.2s, color 0.2s !important;
+      line-height: 1.8;
+    }
+
+    .lang-switcher a:hover {
+      color: var(--white) !important;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .lang-switcher a.active {
+      background: var(--red);
+      color: var(--white) !important;
+    }
+
+    .lang-sep {
+      width: 1px;
+      height: 16px;
+      background: rgba(255, 255, 255, 0.15);
+      flex-shrink: 0;
+    }
+
+    /* ── SCROLL OFFSET ── */
+    #how-it-works,
+    #guarantees,
+    #stacks,
+    #register {
+      scroll-margin-top: 80px;
+    }
   </style>
 </head>
 
@@ -1636,7 +1686,7 @@
      NAV
 ══════════════════════════════════════════════ -->
   <nav>
-    <a href="index.html" class="nav-logo">
+    <a href="../en/index.html" class="nav-logo">
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
         <circle cx="18" cy="18" r="14" stroke="white" stroke-width="1.5" />
         <ellipse cx="18" cy="18" rx="7" ry="14" stroke="white" stroke-width="1.5" />
@@ -1646,46 +1696,51 @@
       </svg>
       <div>
         <div class="logo-text">TKMASTER</div>
-        <div class="logo-sub">Banco de Talentos</div>
+        <div class="logo-sub">Talent Pool</div>
       </div>
     </a>
     <button class="nav-hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#como-funciona">Como Funciona</a></li>
-      <li><a href="#garantias">Garantias</a></li>
-      <li><a href="#stacks">Vagas Abertas</a></li>
-      <li><a href="#confianca">Confiança</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#guarantees">Guarantees</a></li>
+      <li><a href="#stacks">Open Roles</a></li>
+      <li><a href="#trust">Trust</a></li>
       <li class="nav-dropdown" id="dd-institucional">
-        <a href="#" onclick="return false;">Institucional</a>
+        <a href="#" onclick="return false;">About</a>
         <div class="dropdown-menu">
-          <a href="index.html#sobre">
+          <a href="../en/index.html#about">
             <svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round"
                 stroke-linejoin="round" />
             </svg>
-            Por que TKMaster
+            Why TKMaster
           </a>
-          <a href="tkmaster_vmv.html">
+          <a href="../en/vmv.html">
             <svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path
                 d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"
                 stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-            Visão, Missão e Valores
+            Vision, Mission & Values
           </a>
-          <a href="tkmaster_contato.html">
+          <a href="../en/contact.html">
             <svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path
                 d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
                 stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-            Fale Conosco
+            Contact Us
           </a>
         </div>
       </li>
-      <li><a href="tkmaster_contato.html" class="nav-cta">Falar com a equipe</a></li>
+      <li><a href="../en/contact.html" class="nav-cta">Talk to our team</a></li>
+      <li class="lang-switcher">
+        <a href="../talentos.html" aria-label="Português">PT</a>
+        <span class="lang-sep"></span>
+        <a href="#" class="active" aria-label="English">EN</a>
+      </li>
     </ul>
   </nav>
 
@@ -1746,30 +1801,30 @@
       <div class="hero-badge">
         <span class="badge-dot"></span>
         <span class="badge-text">
-          <strong>Cadastro aberto</strong>
+          <strong>Open registration</strong>
           <span class="badge-sep"> · </span>
-          Sem taxas
+          No fees
           <span class="badge-sep"> · </span>
-          Contato quando surgir o match
+          Contact when there's a match
         </span>
       </div>
-      <div class="hero-eyebrow">Para Desenvolvedores · Banco de Talentos</div>
+      <div class="hero-eyebrow">For Developers · Talent Pool</div>
       <h1 class="hero-title">
-        Seu próximo projeto<br>
-        <em>começa aqui.</em>
+        Your next project<br>
+        <em>starts here.</em>
       </h1>
       <p class="hero-desc">
-        A TKMaster conecta profissionais de TI qualificados a projetos reais —
-        com contrato PJ claro, suporte ativo e um Gerente de Contas que conhece seu nome.
+        TKMaster connects qualified IT professionals with real projects —
+        with a clear PJ contract, active support and an Account Manager who knows your name.
       </p>
       <p class="hero-note">
-        <span>●</span> Cadastro rápido · leva menos de 2 minutos
+        <span>●</span> Quick registration · takes less than 2 minutes
       </p>
       <div class="hero-actions">
         <a href="https://forms.gle/iVuhzTtGr4wwKFxN7" target="_blank" rel="noopener" class="btn-primary">
-          Quero me cadastrar
+          Register my profile
         </a>
-        <a href="#como-funciona" class="btn-outline-light">Ver como funciona</a>
+        <a href="#how-it-works" class="btn-outline-light">See how it works</a>
       </div>
 
       <div class="hero-trust">
@@ -1781,8 +1836,8 @@
             </svg>
           </div>
           <div class="trust-text">
-            <strong>Projetos Reais</strong>
-            Clientes ativos com demanda hoje
+            <strong>Real Projects</strong>
+            Active clients with demand today
           </div>
         </div>
         <div class="trust-item">
@@ -1793,8 +1848,8 @@
             </svg>
           </div>
           <div class="trust-text">
-            <strong>Contrato Claro</strong>
-            PJ sem surpresas nem pegadinhas
+            <strong>Clear Contract</strong>
+            PJ with no surprises or hidden clauses
           </div>
         </div>
         <div class="trust-item">
@@ -1806,8 +1861,8 @@
             </svg>
           </div>
           <div class="trust-text">
-            <strong>GC Dedicado</strong>
-            Alguém que resolve, de verdade
+            <strong>Dedicated AM</strong>
+            Someone who actually gets things done
           </div>
         </div>
       </div>
@@ -1816,47 +1871,47 @@
     <!-- Hero right: stacks em demanda -->
     <div class="hero-right">
       <div class="hero-stack">
-        <div class="stack-label">Perfis em demanda agora</div>
+        <div class="stack-label">Profiles in demand now</div>
 
         <div class="stack-row">
-          <div class="stack-role">Dev Backend</div>
+          <div class="stack-role">Backend Dev</div>
           <div class="stack-meta">
-            <span class="stack-level">Pleno / Sênior</span>
+            <span class="stack-level">Mid / Senior</span>
             <div class="stack-dot dot-hot"></div>
           </div>
         </div>
         <div class="stack-row">
-          <div class="stack-role">Dev Frontend</div>
+          <div class="stack-role">Frontend Dev</div>
           <div class="stack-meta">
-            <span class="stack-level">Pleno</span>
+            <span class="stack-level">Mid-level</span>
             <div class="stack-dot dot-hot"></div>
           </div>
         </div>
         <div class="stack-row">
-          <div class="stack-role">Dev Mobile</div>
+          <div class="stack-role">Mobile Dev</div>
           <div class="stack-meta">
-            <span class="stack-level">Pleno / Sênior</span>
+            <span class="stack-level">Mid / Senior</span>
             <div class="stack-dot dot-warm"></div>
           </div>
         </div>
         <div class="stack-row">
           <div class="stack-role">DevOps / Cloud</div>
           <div class="stack-meta">
-            <span class="stack-level">Sênior</span>
+            <span class="stack-level">Senior</span>
             <div class="stack-dot dot-hot"></div>
           </div>
         </div>
         <div class="stack-row">
-          <div class="stack-role">QA / Automação</div>
+          <div class="stack-role">QA / Automation</div>
           <div class="stack-meta">
-            <span class="stack-level">Pleno</span>
+            <span class="stack-level">Mid-level</span>
             <div class="stack-dot dot-warm"></div>
           </div>
         </div>
         <div class="stack-row">
           <div class="stack-role">Data Engineer</div>
           <div class="stack-meta">
-            <span class="stack-level">Pleno / Sênior</span>
+            <span class="stack-level">Mid / Senior</span>
             <div class="stack-dot dot-open"></div>
           </div>
         </div>
@@ -1864,15 +1919,15 @@
         <div class="stack-legend">
           <div class="legend-item">
             <div class="legend-dot" style="background:#22C55E;"></div>
-            Alta demanda
+            High demand
           </div>
           <div class="legend-item">
             <div class="legend-dot" style="background:#F59E0B;"></div>
-            Demanda ativa
+            Active demand
           </div>
           <div class="legend-item">
             <div class="legend-dot" style="background:rgba(255,255,255,0.25);"></div>
-            Banco aberto
+            Pool open
           </div>
         </div>
       </div>
@@ -1883,9 +1938,10 @@
      PROPOSTA DE VALOR
 ══════════════════════════════════════════════ -->
   <section class="section section-alt" id="proposta">
-    <div class="section-label">Por que a TKMaster</div>
-    <h2 class="section-title">Pensado para quem<br>escreve o código</h2>
-    <p class="section-sub">Aqui o foco é em você — não no cliente. Quando o profissional está bem, o projeto vai bem.
+    <div class="section-label">Why TKMaster</div>
+    <h2 class="section-title">Built for those<br>who write the code</h2>
+    <p class="section-sub">Here the focus is on you — not the client. When the professional thrives, the project
+      thrives.
     </p>
 
     <div class="valor-grid">
@@ -1898,9 +1954,10 @@
             <rect x="12" y="12" width="7" height="7" rx="1.5" fill="#C0151A" opacity="0.9" />
           </svg>
         </div>
-        <div class="valor-title">Projetos que valem a pena</div>
-        <div class="valor-desc">Nada de ficar num projeto parado por meses. A TKMaster trabalha com clientes sérios que
-          têm demanda real e ritmo de trabalho saudável.</div>
+        <div class="valor-title">Projects worth your time</div>
+        <div class="valor-desc">No getting stuck on a stalled project for months. TKMaster works with serious clients
+          who
+          have real demand and a healthy work pace.</div>
       </div>
       <div class="valor-card">
         <div class="valor-icon">
@@ -1908,9 +1965,9 @@
             <path d="M4 11l5 5 9-9" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </div>
-        <div class="valor-title">Menos burocracia</div>
-        <div class="valor-desc">Contratos PJ claros, objetivos e sem letra miúda. Você sabe exatamente o que vai
-          receber, quando e por quê. Sem surpresas.</div>
+        <div class="valor-title">Less bureaucracy</div>
+        <div class="valor-desc">Clear, objective PJ contracts with no fine print. You know exactly what you'll
+          receive, when and why. No surprises.</div>
       </div>
       <div class="valor-card">
         <div class="valor-icon">
@@ -1919,9 +1976,9 @@
             <path d="M4 19c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="white" stroke-width="1.6" stroke-linecap="round" />
           </svg>
         </div>
-        <div class="valor-title">Contato humano</div>
-        <div class="valor-desc">Você não vai falar com um bot ou abrir chamado num portal. Tem uma pessoa — seu Gerente
-          de Contas — que resolve o que precisar.</div>
+        <div class="valor-title">Human contact</div>
+        <div class="valor-desc">You won't talk to a bot or open a ticket in a portal. There's a person — your Account
+          Manager — who handles whatever you need.</div>
       </div>
       <div class="valor-card">
         <div class="valor-icon">
@@ -1930,9 +1987,9 @@
               stroke-width="1.5" stroke-linejoin="round" />
           </svg>
         </div>
-        <div class="valor-title">Crescimento contínuo</div>
-        <div class="valor-desc">Ficou bem num projeto? Você tem prioridade nas próximas oportunidades. Desenvolvemos
-          profissionais, não só preenchemos vagas.</div>
+        <div class="valor-title">Continuous growth</div>
+        <div class="valor-desc">Did well on a project? You get priority on the next opportunities. We develop
+          professionals, not just fill positions.</div>
       </div>
       <div class="valor-card">
         <div class="valor-icon">
@@ -1941,9 +1998,10 @@
             <path d="M11 7v4l3 3" stroke="white" stroke-width="1.5" stroke-linecap="round" />
           </svg>
         </div>
-        <div class="valor-title">Suporte ativo e rápido</div>
-        <div class="valor-desc">Problema com o cliente, dúvida sobre o contrato ou mudança no projeto? Você aciona o GC
-          e tem retorno em até 24h. Sem esperar.</div>
+        <div class="valor-title">Active and fast support</div>
+        <div class="valor-desc">Issue with the client, question about the contract or project change? You reach out to
+          your AM
+          and get a response within 24h. No waiting.</div>
       </div>
       <div class="valor-card">
         <div class="valor-icon">
@@ -1951,9 +2009,10 @@
             <path d="M4 6h14M4 11h14M4 16h9" stroke="white" stroke-width="1.5" stroke-linecap="round" />
           </svg>
         </div>
-        <div class="valor-title">Transparência total</div>
-        <div class="valor-desc">Você sabe quem é o cliente, qual é o projeto, quais são as expectativas e o que acontece
-          se algo mudar. Sem "você vai saber depois".</div>
+        <div class="valor-title">Full transparency</div>
+        <div class="valor-desc">You know who the client is, what the project is, what the expectations are and what
+          happens
+          if something changes. No "you'll find out later".</div>
       </div>
     </div>
   </section>
@@ -1961,10 +2020,10 @@
   <!-- ══════════════════════════════════════════════
      COMO FUNCIONA (lado do profissional)
 ══════════════════════════════════════════════ -->
-  <section class="section section-dark" id="como-funciona">
-    <div class="section-label">Processo</div>
-    <h2 class="section-title" style="color:var(--white);">Do cadastro<br>ao primeiro dia</h2>
-    <p class="section-sub dark-sub">Quatro etapas. Simples, rápidas e sem mistério.</p>
+  <section class="section section-dark" id="how-it-works">
+    <div class="section-label">Process</div>
+    <h2 class="section-title" style="color:var(--white);">From registration<br>to day one</h2>
+    <p class="section-sub dark-sub">Four steps. Simple, fast and straightforward.</p>
 
     <div class="steps-grid">
       <div class="step">
@@ -1974,10 +2033,10 @@
             <path d="M4 5h12v2H4zM4 9h12v2H4zM4 13h8v2H4z" fill="#C0151A" opacity="0.9" />
           </svg>
         </div>
-        <div class="step-title">Cadastro</div>
-        <div class="step-desc">Preencha o formulário com seu perfil, stack e disponibilidade. Leva menos de 2 minutos.
+        <div class="step-title">Registration</div>
+        <div class="step-desc">Fill out the form with your profile, stack and availability. Takes less than 2 minutes.
         </div>
-        <div class="step-cta-inline">→ Começar agora</div>
+        <div class="step-cta-inline">→ Start now</div>
       </div>
       <div class="step">
         <div class="step-num">02</div>
@@ -1988,9 +2047,8 @@
               stroke-linecap="round" />
           </svg>
         </div>
-        <div class="step-title">Avaliação</div>
-        <div class="step-desc">Nossa equipe analisa seu perfil e pode entrar em contato para uma conversa rápida de
-          alinhamento.</div>
+        <div class="step-title">Evaluation</div>
+        <div class="step-desc">Our team reviews your profile and may reach out for a quick alignment conversation.</div>
       </div>
       <div class="step">
         <div class="step-num">03</div>
@@ -2000,9 +2058,9 @@
               stroke-linejoin="round" />
           </svg>
         </div>
-        <div class="step-title">Match com cliente</div>
-        <div class="step-desc">Quando surgir uma oportunidade compatível com seu perfil, apresentamos a você com todos
-          os detalhes antes de qualquer compromisso.</div>
+        <div class="step-title">Client match</div>
+        <div class="step-desc">When a matching opportunity comes up, we present it to you with full
+          details before any commitment.</div>
       </div>
       <div class="step">
         <div class="step-num">04</div>
@@ -2012,9 +2070,9 @@
             <path d="M10 6v4l3 3" stroke="#C0151A" stroke-width="1.5" stroke-linecap="round" />
           </svg>
         </div>
-        <div class="step-title">Alocação + suporte</div>
-        <div class="step-desc">Contrato assinado, você começa. Seu GC continua junto — check-ins, suporte a ocorrências
-          e gestão da relação com o cliente.</div>
+        <div class="step-title">Placement + support</div>
+        <div class="step-desc">Contract signed, you start. Your AM stays with you — check-ins, issue support
+          and client relationship management.</div>
       </div>
     </div>
   </section>
@@ -2022,10 +2080,10 @@
   <!-- ══════════════════════════════════════════════
      GARANTIAS / SEGURANÇA
 ══════════════════════════════════════════════ -->
-  <section class="section section-alt" id="garantias">
-    <div class="section-label">Sem pegadinhas</div>
-    <h2 class="section-title">O que a TKMaster<br>garante para você</h2>
-    <p class="section-sub">Relação transparente e justa — do primeiro contato até o encerramento do projeto.</p>
+  <section class="section section-alt" id="guarantees">
+    <div class="section-label">No hidden catches</div>
+    <h2 class="section-title">What TKMaster<br>guarantees you</h2>
+    <p class="section-sub">A transparent and fair relationship — from first contact to project closure.</p>
 
     <div class="seguranca-grid">
       <div class="garantia">
@@ -2035,9 +2093,9 @@
           </svg>
         </div>
         <div>
-          <div class="garantia-title">Contrato PJ sem pegadinhas</div>
-          <div class="garantia-desc">Documento claro, com escopo definido, valor acordado e cláusulas de proteção para
-            ambos os lados. Você lê, entende e assina com tranquilidade.</div>
+          <div class="garantia-title">PJ contract with no hidden catches</div>
+          <div class="garantia-desc">A clear document with defined scope, agreed value and protection clauses for
+            both parties. You read, understand and sign with confidence.</div>
         </div>
       </div>
       <div class="garantia">
@@ -2047,9 +2105,9 @@
           </svg>
         </div>
         <div>
-          <div class="garantia-title">Valores definidos antes</div>
-          <div class="garantia-desc">A negociação de taxa acontece antes de qualquer apresentação ao cliente. Você nunca
-            fica sabendo do valor depois do compromisso firmado.</div>
+          <div class="garantia-title">Rates defined upfront</div>
+          <div class="garantia-desc">Rate negotiation happens before any client presentation. You will never
+            find out the value after the commitment is made.</div>
         </div>
       </div>
       <div class="garantia">
@@ -2059,9 +2117,9 @@
           </svg>
         </div>
         <div>
-          <div class="garantia-title">Suporte ativo — não reativo</div>
-          <div class="garantia-desc">O GC faz check-ins periódicos. Você não precisa esperar a situação virar um
-            problema para falar com alguém. A TKMaster age antes.</div>
+          <div class="garantia-title">Active — not reactive — support</div>
+          <div class="garantia-desc">Your AM does periodic check-ins. You don't need to wait for a situation to become a
+            problem to talk to someone. TKMaster acts before that.</div>
         </div>
       </div>
       <div class="garantia">
@@ -2071,9 +2129,9 @@
           </svg>
         </div>
         <div>
-          <div class="garantia-title">Confidencialidade garantida</div>
-          <div class="garantia-desc">Seus dados e informações do projeto ficam protegidos por cláusula contratual de
-            confidencialidade. O que é seu, é seu.</div>
+          <div class="garantia-title">Guaranteed confidentiality</div>
+          <div class="garantia-desc">Your data and project information are protected by a contractual confidentiality
+            clause. What's yours, stays yours.</div>
         </div>
       </div>
       <div class="garantia">
@@ -2083,9 +2141,9 @@
           </svg>
         </div>
         <div>
-          <div class="garantia-title">Você pode recusar oportunidades</div>
-          <div class="garantia-desc">Nenhuma pressão para aceitar qualquer projeto. Você avalia, decide e a TKMaster
-            respeita. Seu fit com o projeto é tão importante quanto o fit técnico.</div>
+          <div class="garantia-title">You can decline opportunities</div>
+          <div class="garantia-desc">No pressure to accept any project. You evaluate, decide and TKMaster
+            respects that. Your fit with the project is as important as the technical fit.</div>
         </div>
       </div>
       <div class="garantia">
@@ -2095,9 +2153,9 @@
           </svg>
         </div>
         <div>
-          <div class="garantia-title">Encerramento sem drama</div>
-          <div class="garantia-desc">Se o projeto acabar ou a relação não funcionar, há um processo claro de
-            encerramento. Sem surpresas, sem pressão, sem cobranças indevidas.</div>
+          <div class="garantia-title">Smooth project closure</div>
+          <div class="garantia-desc">If the project ends or the relationship doesn't work out, there's a clear
+            closure process. No surprises, no pressure, no improper charges.</div>
         </div>
       </div>
     </div>
@@ -2107,10 +2165,10 @@
      STACKS PROCURADAS
 ══════════════════════════════════════════════ -->
   <section class="section section-dark" id="stacks">
-    <div class="section-label">Quem buscamos agora</div>
-    <h2 class="section-title" style="color:var(--white);">Stacks com<br>demanda ativa</h2>
-    <p class="section-sub dark-sub">Estas são as tecnologias mais procuradas pelos nossos clientes hoje. Mas o banco é
-      aberto — cadastre-se mesmo que sua stack não esteja na lista.</p>
+    <div class="section-label">Who we're looking for</div>
+    <h2 class="section-title" style="color:var(--white);">Stacks with<br>active demand</h2>
+    <p class="section-sub dark-sub">These are the most sought-after technologies by our clients today. But the pool is
+      open — register even if your stack isn't on the list.</p>
 
     <div class="stacks-wrapper">
       <span class="stack-tag hot">Node.js</span>
@@ -2138,69 +2196,69 @@
     </div>
 
     <a href="https://forms.gle/iVuhzTtGr4wwKFxN7" target="_blank" rel="noopener" class="btn-primary">
-      Cadastrar meu perfil
+      Register my profile
     </a>
   </section>
 
   <!-- ══════════════════════════════════════════════
      CTA PROVA SOCIAL
 ══════════════════════════════════════════════ -->
-  <section class="section section-alt" id="confianca">
-    <div class="section-label">Confiança</div>
+  <section class="section section-alt" id="trust">
+    <div class="section-label">Trust</div>
     <h2 class="section-title">
-      Você não está entrando no escuro
+      You're not going in blind
     </h2>
     <p class="section-sub">
-      Estrutura, critério e contato direto desde o primeiro momento.
+      Structure, criteria and direct contact from the very first moment.
     </p>
 
     <!-- Números que comunicam posicionamento -->
     <div class="stats-grid">
       <div class="stat-item">
-        <div class="stat-number">&lt; 7 dias</div>
-        <div class="stat-label">Retorno após o cadastro quando há demanda compatível</div>
+        <div class="stat-number">&lt; 7 days</div>
+        <div class="stat-label">Response after registration when there's a compatible demand</div>
       </div>
       <div class="stat-item">
-        <div class="stat-number">Modelo PJ</div>
-        <div class="stat-label">Contratação inicial via PJ — com previsão de expansão do modelo conforme a operação
-          cresce</div>
+        <div class="stat-number">PJ Model</div>
+        <div class="stat-label">Initial hiring via PJ contract — with planned model expansion as the operation
+          grows</div>
       </div>
       <div class="stat-item">
-        <div class="stat-number">0 taxa</div>
-        <div class="stat-label">Cadastro e indicação sem custo nenhum para o profissional</div>
+        <div class="stat-number">0 fee</div>
+        <div class="stat-label">Registration and referral at zero cost to the professional</div>
       </div>
     </div>
 
     <!-- Diferenciais únicos -->
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-title">Curadoria, não volume</div>
+        <div class="service-title">Curation, not volume</div>
         <div class="service-desc">
-          Cada perfil é avaliado antes de qualquer indicação. O objetivo é match real — você não vai receber contato sem
-          demanda concreta.
+          Each profile is evaluated before any referral. The goal is a real match — you won't be contacted without
+          a concrete demand.
         </div>
       </div>
       <div class="service-card">
-        <div class="service-title">Contato com quem decide</div>
+        <div class="service-title">Direct access to decision makers</div>
         <div class="service-desc">
-          Você fala diretamente com a fundadora e com quem está operando. Sem plataforma automatizada, sem chatbot, sem
-          fila de suporte.
+          You speak directly with the founder and the team running operations. No automated platform, no chatbot, no
+          support queue.
         </div>
       </div>
       <div class="service-card">
-        <div class="service-title">Prioridade para quem chega primeiro</div>
+        <div class="service-title">First come, first served</div>
         <div class="service-desc">
-          O banco está sendo formado agora. Os primeiros cadastrados têm vantagem natural nas primeiras oportunidades —
-          e constroem histórico conosco.
+          The pool is being built right now. Early registrants have a natural advantage in the first opportunities —
+          and build history with us.
         </div>
       </div>
     </div>
 
     <!-- Mensagem da fundadora -->
     <div class="testimonial">
-      "A TKMaster nasceu para ser a consultoria que eu gostaria de ter encontrado quando estava no mercado como
-      profissional — com processo claro, respeito ao tempo de cada um e foco em oportunidades que fazem sentido."
-      <span>— Tatiane K., Fundadora da TKMaster</span>
+      "TKMaster was born to be the consulting firm I wish I had found when I was in the market as a
+      professional — with a clear process, respect for everyone's time and a focus on opportunities that make sense."
+      <span>— Tatiane K., Founder of TKMaster</span>
     </div>
 
   </section>
@@ -2208,131 +2266,135 @@
   <!-- ══ FAQ ══ -->
   <section class="faq-section" id="faq">
     <div class="faq-inner">
-      <div class="section-label">Dúvidas frequentes</div>
-      <h2 class="section-title">Perguntas que<br>todo profissional faz</h2>
-      <p class="section-sub">Respondemos aqui o que mais aparece. Se sua dúvida não estiver, <a
-          href="tkmaster_contato.html" style="color:var(--red);font-weight:600;text-decoration:none;">fale direto com a
-          gente</a>.</p>
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Questions every<br>professional asks</h2>
+      <p class="section-sub">We've answered the most common ones here. If yours isn't listed, <a href="../en/contact.html"
+          style="color:var(--red);font-weight:600;text-decoration:none;">talk directly
+          to us</a>.</p>
 
       <div class="faq-list">
 
         <div class="faq-item">
           <div class="faq-question">
-            <span class="faq-question-text">Como funciona o processo depois que me cadastro?</span>
+            <span class="faq-question-text">How does the process work after I register?</span>
             <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none">
                 <path d="M12 5v14M5 12h14" stroke-linecap="round" stroke-linejoin="round" />
               </svg></div>
           </div>
           <div class="faq-answer">
-            <p>Após o cadastro, seu perfil entra no banco de talentos da TKMaster. Quando surgir uma demanda compatível
-              com seu perfil — stack, nível de senioridade e disponibilidade — entramos em contato direto, sem
-              intermediários. Você recebe a descrição da oportunidade e decide se quer avançar.</p>
+            <p>After registration, your profile enters TKMaster's talent pool. When a demand compatible
+              with your profile — stack, seniority level and availability — comes up, we contact you directly, without
+              intermediaries. You receive the opportunity description and decide whether to move forward.</p>
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
-            <span class="faq-question-text">Quanto tempo leva para ser contatado?</span>
+            <span class="faq-question-text">How long until I'm contacted?</span>
             <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none">
                 <path d="M12 5v14M5 12h14" stroke-linecap="round" stroke-linejoin="round" />
               </svg></div>
           </div>
           <div class="faq-answer">
-            <p>Depende da disponibilidade de demandas compatíveis com seu perfil. Quando há uma vaga alinhada, o contato
-              acontece em até 7 dias. Se não houver nada no momento, seu cadastro permanece ativo e você é o primeiro a
-              saber quando surgir algo.</p>
+            <p>It depends on the availability of demands compatible with your profile. When there's an aligned
+              opportunity, contact
+              happens within 7 days. If there's nothing at the moment, your registration stays active and you're the
+              first to
+              know when something comes up.</p>
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
-            <span class="faq-question-text">O cadastro tem algum custo?</span>
+            <span class="faq-question-text">Is there any cost to register?</span>
             <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none">
                 <path d="M12 5v14M5 12h14" stroke-linecap="round" stroke-linejoin="round" />
               </svg></div>
           </div>
           <div class="faq-answer">
-            <p>Não. Cadastro, processo e indicação são 100% gratuitos para o profissional. A TKMaster cobra do cliente —
-              nunca do profissional alocado.</p>
+            <p>No. Registration, process and referral are 100% free for the professional. TKMaster charges the client —
+              never the placed professional.</p>
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
-            <span class="faq-question-text">Posso estar em mais de um projeto ao mesmo tempo?</span>
+            <span class="faq-question-text">Can I be on more than one project at the same time?</span>
             <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none">
                 <path d="M12 5v14M5 12h14" stroke-linecap="round" stroke-linejoin="round" />
               </svg></div>
           </div>
           <div class="faq-answer">
-            <p>Sim, desde que seja tecnicamente viável e acordado com todos os clientes envolvidos. A TKMaster respeita
-              sua disponibilidade real — informada no cadastro — e não indica o mesmo profissional para projetos
-              incompatíveis de carga horária.</p>
+            <p>Yes, as long as it's technically feasible and agreed upon with all clients involved. TKMaster respects
+              your actual availability — stated during registration — and won't refer the same professional to projects
+              with incompatible workloads.</p>
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
-            <span class="faq-question-text">Preciso ser PJ para trabalhar com a TKMaster?</span>
+            <span class="faq-question-text">Do I need to be a PJ contractor to work with TKMaster?</span>
             <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none">
                 <path d="M12 5v14M5 12h14" stroke-linecap="round" stroke-linejoin="round" />
               </svg></div>
           </div>
           <div class="faq-answer">
-            <p>No modelo atual, sim — a alocação é feita via contrato PJ. Isso significa que você precisa de CNPJ ativo
-              para emitir nota fiscal. A TKMaster orienta sobre o processo de abertura se você ainda não tiver um. Com o
-              crescimento da operação, outros modelos poderão ser avaliados.</p>
+            <p>In the current model, yes — placement is done via PJ contract. This means you need an active CNPJ
+              to issue invoices. TKMaster guides you through the opening process if you don't have one yet. As the
+              operation
+              grows, other models may be considered.</p>
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
-            <span class="faq-question-text">Vou saber o que está acontecendo durante a alocação?</span>
+            <span class="faq-question-text">Will I know what's happening during the placement?</span>
             <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none">
                 <path d="M12 5v14M5 12h14" stroke-linecap="round" stroke-linejoin="round" />
               </svg></div>
           </div>
           <div class="faq-answer">
-            <p>Sim. Todo profissional alocado pela TKMaster tem um Gerente de Contas dedicado — seu ponto de contato
-              para qualquer situação. Fazemos check-ins regulares, relatórios periódicos e garantimos que você não fique
-              sem retorno em nenhum momento do projeto.</p>
+            <p>Yes. Every professional placed by TKMaster has a dedicated Account Manager — your point of contact
+              for any situation. We do regular check-ins, periodic reports and ensure you're never left without
+              a response at any point during the project.</p>
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
-            <span class="faq-question-text">O que acontece quando o projeto termina?</span>
+            <span class="faq-question-text">What happens when the project ends?</span>
             <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none">
                 <path d="M12 5v14M5 12h14" stroke-linecap="round" stroke-linejoin="round" />
               </svg></div>
           </div>
           <div class="faq-answer">
-            <p>Nossa primeira resposta é buscar realocação — não dispensar. Quando um projeto se encerra, o GC já começa
-              o processo de mapeamento de novas oportunidades com antecedência. Profissional bom não fica parado: é um
-              dos nossos princípios.</p>
+            <p>Our first response is to look for reallocation — not dismissal. When a project ends, the AM already
+              starts
+              mapping new opportunities in advance. A good professional doesn't sit idle: that's one of our core
+              principles.</p>
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
-            <span class="faq-question-text">Minha stack não está na lista de demandas ativas. Posso me cadastrar mesmo
-              assim?</span>
+            <span class="faq-question-text">My stack isn't on the active demand list. Can I still register?</span>
             <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none">
                 <path d="M12 5v14M5 12h14" stroke-linecap="round" stroke-linejoin="round" />
               </svg></div>
           </div>
           <div class="faq-answer">
-            <p>Sim. O banco de talentos é aberto para qualquer perfil de TI. A lista de stacks com demanda ativa é
-              dinâmica — muda conforme os clientes. Seu cadastro já estará na base quando surgir uma oportunidade
-              compatível.</p>
+            <p>Yes. The talent pool is open to any IT profile. The list of stacks with active demand is
+              dynamic — it changes as clients evolve. Your registration will already be in the database when a
+              compatible
+              opportunity comes up.</p>
           </div>
         </div>
 
       </div>
 
       <div class="faq-cta">
-        <p>Ainda tem dúvidas? Fale direto com quem está construindo a TKMaster.</p>
-        <a href="tkmaster_contato.html">Falar com a equipe</a>
+        <p>Still have questions? Talk directly to the team building TKMaster.</p>
+        <a href="../en/contact.html">Talk to our team</a>
       </div>
     </div>
   </section>
@@ -2340,21 +2402,21 @@
   <!-- ══════════════════════════════════════════════
      CTA FINAL
 ══════════════════════════════════════════════ -->
-  <section class="cta-final" id="cadastro">
+  <section class="cta-final" id="register">
     <h2 class="cta-final-title">
-      Pronto para o<br>próximo projeto?
+      Ready for your<br>next project?
     </h2>
     <p class="cta-final-sub">
-      Cadastre-se agora no banco de talentos da TKMaster.
-      Sem taxa, sem compromisso imediato — só uma chance de trabalhar em algo que vale o seu tempo.
+      Register now in TKMaster's talent pool.
+      No fee, no immediate commitment — just a chance to work on something worth your time.
     </p>
     <div class="cta-final-actions">
       <a href="https://forms.gle/iVuhzTtGr4wwKFxN7" target="_blank" rel="noopener" class="btn-white">
-        Quero me cadastrar
+        Register my profile
       </a>
     </div>
     <div class="cta-trust-note">
-      Cadastro rápido · leva menos de 2 minutos · sem compromisso
+      Quick registration · takes less than 2 minutes · no commitment
     </div>
   </section>
 
@@ -2364,7 +2426,7 @@
   <footer>
     <div class="footer-grid">
       <div>
-        <a href="index.html" class="footer-brand">
+        <a href="../en/index.html" class="footer-brand">
           <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
             <circle cx="18" cy="18" r="14" stroke="white" stroke-width="1.5" />
             <ellipse cx="18" cy="18" rx="7" ry="14" stroke="white" stroke-width="1.5" />
@@ -2374,11 +2436,11 @@
           </svg>
           <div>
             <div class="logo-text">TKMASTER</div>
-            <div class="logo-sub">Consultoria e Sistemas</div>
+            <div class="logo-sub">Consulting and Systems</div>
           </div>
         </a>
-        <p class="footer-brand-desc">Conectamos empresas a profissionais de TI qualificados, com gestão ativa e
-          documentação impecável. Brasil.</p>
+        <p class="footer-brand-desc">We connect companies with qualified IT professionals, with active management and
+          impeccable documentation. Brazil.</p>
         <div class="footer-social">
           <a href="https://www.linkedin.com/company/tkmasterconsultorias/" target="_blank" class="social-link"><svg
               viewBox="0 0 24 24" fill="rgba(255,255,255,0.6)">
@@ -2408,38 +2470,39 @@
         </div>
       </div>
       <div>
-        <div class="footer-col-title">Empresa</div>
+        <div class="footer-col-title">Company</div>
         <ul class="footer-links">
-          <li><a href="index.html#sobre">Por que TKMaster</a></li>
-          <li><a href="tkmaster_vmv.html">Visão, Missão e Valores</a></li>
-          <li><a href="index.html#como-funciona">Como Funciona</a></li>
-          <li><a href="tkmaster_contato.html">Contato</a></li>
+          <li><a href="../en/index.html#about">Why TKMaster</a></li>
+          <li><a href="../en/vmv.html">Vision, Mission & Values</a></li>
+          <li><a href="../en/index.html#how-it-works">How It Works</a></li>
+          <li><a href="../en/contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
-        <div class="footer-col-title">Para Empresas</div>
+        <div class="footer-col-title">For Companies</div>
         <ul class="footer-links">
-          <li><a href="index.html#servicos">Alocação de TI</a></li>
-          <li><a href="index.html#servicos">Gestão de Contratos</a></li>
-          <li><a href="index.html#servicos">Gerência de Contas</a></li>
-          <li><a href="index.html#servicos">Desenvolvimento</a></li>
+          <li><a href="../en/index.html#staffing">IT Staffing</a></li>
+          <li><a href="../en/index.html#contracts">Contract Management</a></li>
+          <li><a href="../en/index.html#account-management">Account Management</a></li>
+          <li><a href="../en/index.html#development">Development</a></li>
         </ul>
       </div>
       <div>
-        <div class="footer-col-title">Para Profissionais</div>
+        <div class="footer-col-title">For Professionals</div>
         <ul class="footer-links">
-          <li><a href="https://forms.gle/iVuhzTtGr4wwKFxN7" target="_blank" rel="noopener">Cadastre seu Perfil</a></li>
-          <li><a href="tkmaster_talentos.html">Banco de Talentos</a></li>
-          <li><a href="tkmaster_talentos.html#como-funciona">Como Funciona o PJ</a></li>
-          <li><a href="tkmaster_talentos.html#garantias">Plano de Carreira</a></li>
+          <li><a href="https://forms.gle/iVuhzTtGr4wwKFxN7" target="_blank" rel="noopener">Register your Profile</a>
+          </li>
+          <li><a href="../en/talents.html">Talent Pool</a></li>
+          <li><a href="../en/talents.html#how-it-works">How PJ Contracting Works</a></li>
+          <li><a href="../en/talents.html#guarantees">Career Plan</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-copy">© 2026 <span>TKMaster</span> Consultoria e Sistemas · Brasil</div>
-      <div class="footer-copy">Todos os direitos reservados &nbsp;·&nbsp; <a href="tkmaster_privacidade.html">Política
-          de Privacidade</a>&nbsp;·&nbsp;
-        <a href="tkmaster_termos.html" style="color:var(--red);text-decoration:none;">Termos de Uso</a>
+      <div class="footer-copy">© 2026 <span>TKMaster</span> Consulting and Systems · Brazil</div>
+      <div class="footer-copy">All rights reserved &nbsp;·&nbsp; <a href="../en/privacy.html">Privacy
+          Policy</a>&nbsp;·&nbsp;
+        <a href="../en/terms.html" style="color:var(--red);text-decoration:none;">Terms of Use</a>
       </div>
     </div>
   </footer>
@@ -2587,7 +2650,7 @@
 
   <div class="wa-btn-pulse"></div>
   <a class="wa-btn"
-    href="https://wa.me/5521989934272?text=Olá%2C%20vim%20pelo%20site%20da%20TKMaster%20e%20gostaria%20de%20mais%20informações."
+    href="https://wa.me/5521989934272?text=Hello%2C%20I%20visited%20the%20TKMaster%20website%20and%20would%20like%20more%20information."
     target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -2715,16 +2778,16 @@
     }
   </style>
 
-  <div id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+  <div id="cookie-banner" role="dialog" aria-label="Cookie notice">
     <p class="cookie-text">
-      <strong>Usamos cookies</strong> para melhorar sua experiência e analisar o tráfego do site.
-      Ao clicar em "Aceitar", você concorda com o uso de cookies conforme nossa
-      <a href="tkmaster_privacidade.html">Política de Privacidade</a>&nbsp;·&nbsp;
-      <a href="tkmaster_termos.html" style="color:var(--red);text-decoration:none;">Termos de Uso</a>
+      <strong>We use cookies</strong> to improve your experience and analyze site traffic.
+      By clicking "Accept", you agree to our use of cookies as described in our
+      <a href="../en/privacy.html">Privacy Policy</a>&nbsp;·&nbsp;
+      <a href="../en/terms.html" style="color:var(--red);text-decoration:none;">Terms of Use</a>
     </p>
     <div class="cookie-actions">
-      <button class="cookie-btn cookie-btn-decline" id="cookie-decline">Só essenciais</button>
-      <button class="cookie-btn cookie-btn-accept" id="cookie-accept">Aceitar</button>
+      <button class="cookie-btn cookie-btn-decline" id="cookie-decline">Essential only</button>
+      <button class="cookie-btn cookie-btn-accept" id="cookie-accept">Accept</button>
     </div>
   </div>
 

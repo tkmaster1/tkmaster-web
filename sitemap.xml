@@ -1,32 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ── PT — Raiz ── -->
 
   <url>
     <loc>https://www.tkmasters.com.br/</loc>
-    <lastmod>2026-04-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.tkmasters.com.br/"/>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://www.tkmasters.com.br/en/"/>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://www.tkmasters.com.br/tkmaster_talentos.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://www.tkmasters.com.br/talentos.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.tkmasters.com.br/talentos.html"/>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://www.tkmasters.com.br/en/talents.html"/>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.tkmasters.com.br/contato.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.tkmasters.com.br/contato.html"/>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://www.tkmasters.com.br/en/contact.html"/>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.tkmasters.com.br/tkmaster_contato.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://www.tkmasters.com.br/vmv.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.tkmasters.com.br/vmv.html"/>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://www.tkmasters.com.br/en/vmv.html"/>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.tkmasters.com.br/tkmaster_vmv.html</loc>
-    <lastmod>2026-04-27</lastmod>
+    <loc>https://www.tkmasters.com.br/privacidade.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.tkmasters.com.br/privacidade.html"/>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://www.tkmasters.com.br/en/privacy.html"/>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://www.tkmasters.com.br/termos.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.tkmasters.com.br/termos.html"/>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://www.tkmasters.com.br/en/terms.html"/>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- ── EN — /en/ ── -->
+
+  <url>
+    <loc>https://www.tkmasters.com.br/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://www.tkmasters.com.br/en/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.tkmasters.com.br/"/>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://www.tkmasters.com.br/en/talents.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://www.tkmasters.com.br/en/talents.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.tkmasters.com.br/talentos.html"/>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.tkmasters.com.br/en/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://www.tkmasters.com.br/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.tkmasters.com.br/contato.html"/>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://www.tkmasters.com.br/en/vmv.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://www.tkmasters.com.br/en/vmv.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.tkmasters.com.br/vmv.html"/>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <url>
+    <loc>https://www.tkmasters.com.br/en/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://www.tkmasters.com.br/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.tkmasters.com.br/privacidade.html"/>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.35</priority>
+  </url>
+
+  <url>
+    <loc>https://www.tkmasters.com.br/en/terms.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://www.tkmasters.com.br/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.tkmasters.com.br/termos.html"/>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.25</priority>
   </url>
 
 </urlset>
