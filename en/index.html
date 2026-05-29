@@ -842,7 +842,7 @@
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
       gap: 60px;
       padding-bottom: 48px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -1410,7 +1410,7 @@
       align-items: center;
       gap: 2px;
       margin-left: 8px;
-      border: 1px solid rgba(255,255,255,0.15);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 3px;
       overflow: hidden;
       flex-shrink: 0;
@@ -1422,7 +1422,7 @@
       font-weight: 700 !important;
       letter-spacing: 0.1em !important;
       text-transform: uppercase !important;
-      color: rgba(255,255,255,0.45) !important;
+      color: rgba(255, 255, 255, 0.45) !important;
       text-decoration: none;
       padding: 4px 9px !important;
       transition: background 0.2s, color 0.2s !important;
@@ -1431,7 +1431,7 @@
 
     .lang-switcher a:hover {
       color: var(--white) !important;
-      background: rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.08);
     }
 
     .lang-switcher a.active {
@@ -1442,12 +1442,15 @@
     .lang-sep {
       width: 1px;
       height: 16px;
-      background: rgba(255,255,255,0.15);
+      background: rgba(255, 255, 255, 0.15);
       flex-shrink: 0;
     }
 
     /* ── SCROLL OFFSET serviços ── */
-    #staffing, #contracts, #account-management, #development {
+    #staffing,
+    #contracts,
+    #account-management,
+    #development {
       scroll-margin-top: 80px;
     }
   </style>
@@ -1483,8 +1486,11 @@
         <div class="dropdown-menu">
           <a href="#about">
             <svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round"
-                stroke-linejoin="round" />
+              <!-- Círculo externo -->
+              <circle cx="12" cy="12" r="10" stroke-linecap="round" stroke-linejoin="round" />
+              <!-- Ponto de interrogação estilizado -->
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" stroke-linecap="round" stroke-linejoin="round" />
+              <line x1="12" y1="17" x2="12" y2="17" stroke-linecap="round" />
             </svg>
             Why TKMaster
           </a>
@@ -1496,6 +1502,14 @@
             </svg>
             Vision, Mission & Values
           </a>
+          <a href="../en/partner.html">
+            <svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="9" cy="7" r="4" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M22 21v-2a4 4 0 00-3-3.87" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M16 3.13a4 4 0 010 7.75" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Partners</a>
           <a href="../en/contact.html">
             <svg class="dd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path
@@ -1659,7 +1673,8 @@
             </svg>
           </div>
           <div class="step-title">You open<br>a request</div>
-          <div class="step-desc">Tell us what you need: stack, seniority, work model and deadline. Simple — no lengthy forms.</div>
+          <div class="step-desc">Tell us what you need: stack, seniority, work model and deadline. Simple — no lengthy
+            forms.</div>
         </div>
       </div>
 
@@ -1679,7 +1694,8 @@
             </svg>
           </div>
           <div class="step-title">TKMaster maps<br>the profile</div>
-          <div class="step-desc">We match your request with our qualified talent pool — evaluated both technically and behaviorally.</div>
+          <div class="step-desc">We match your request with our qualified talent pool — evaluated both technically and
+            behaviorally.</div>
         </div>
       </div>
 
@@ -1695,7 +1711,8 @@
             </svg>
           </div>
           <div class="step-title">We present<br>the professional</div>
-          <div class="step-desc">You review the profile and decide. Once approved, we handle all PJ contract formalities — no bureaucracy.</div>
+          <div class="step-desc">You review the profile and decide. Once approved, we handle all PJ contract formalities
+            — no bureaucracy.</div>
         </div>
       </div>
 
@@ -1713,7 +1730,8 @@
             </svg>
           </div>
           <div class="step-title">Active staffing<br>with AM</div>
-          <div class="step-desc">Your Account Manager follows the project day-to-day. Issues resolved within 24h — you have a partner, not just a vendor.</div>
+          <div class="step-desc">Your Account Manager follows the project day-to-day. Issues resolved within 24h — you
+            have a partner, not just a vendor.</div>
         </div>
       </div>
 
@@ -1736,7 +1754,8 @@
         </div>
         <div class="service-num" id="staffing">01 — Core</div>
         <div class="service-title">IT Professional<br>Staffing</div>
-        <div class="service-desc">Developers, analysts, QAs, DevOps and more — hired as contractors, embedded in your team, managed by TKMaster.</div>
+        <div class="service-desc">Developers, analysts, QAs, DevOps and more — hired as contractors, embedded in your
+          team, managed by TKMaster.</div>
         <div class="service-tags">
           <span class="tag">Frontend</span>
           <span class="tag">Backend</span>
@@ -1755,7 +1774,8 @@
         </div>
         <div class="service-num" id="contracts">02</div>
         <div class="service-title">PJ Contract<br>Management</div>
-        <div class="service-desc">All contracting, renewal, adjustment and termination bureaucracy — documented and secure for both parties.</div>
+        <div class="service-desc">All contracting, renewal, adjustment and termination bureaucracy — documented and
+          secure for both parties.</div>
         <div class="service-tags">
           <span class="tag">Contrato PJ</span>
           <span class="tag">Aditivos</span>
@@ -1771,7 +1791,8 @@
         </div>
         <div class="service-num" id="account-management">03</div>
         <div class="service-title">Active Account<br>Management</div>
-        <div class="service-desc">Your dedicated point of contact monitors satisfaction on both sides and acts preventively on issues.</div>
+        <div class="service-desc">Your dedicated point of contact monitors satisfaction on both sides and acts
+          preventively on issues.</div>
         <div class="service-tags">
           <span class="tag">Check-ins</span>
           <span class="tag">NPS</span>
@@ -1787,7 +1808,8 @@
         </div>
         <div class="service-num" id="development">04 — Upcoming</div>
         <div class="service-title">Systems<br>Development</div>
-        <div class="service-desc">On-demand projects, dedicated squads and technical consulting for companies that need more than a solo professional.</div>
+        <div class="service-desc">On-demand projects, dedicated squads and technical consulting for companies that need
+          more than a solo professional.</div>
         <div class="service-tags">
           <span class="tag">Squads</span>
           <span class="tag">Projetos</span>
@@ -2063,7 +2085,8 @@
             opacity="0.6" />
         </svg>
         <div class="diff-title">A person, not a position</div>
-        <div class="diff-desc">Each professional in our pool is individually evaluated. You receive a profile, not a random resume.</div>
+        <div class="diff-desc">Each professional in our pool is individually evaluated. You receive a profile, not a
+          random resume.</div>
       </div>
       <div class="diff-item">
         <svg class="diff-icon" viewBox="0 0 48 48" fill="none">
@@ -2071,7 +2094,8 @@
           <circle cx="24" cy="24" r="10" stroke="white" stroke-width="2" opacity="0.6" />
         </svg>
         <div class="diff-title">Full traceability</div>
-        <div class="diff-desc">Monthly and semi-annual reports. Standardized forms. Incident history recorded. Everything documented.</div>
+        <div class="diff-desc">Monthly and semi-annual reports. Standardized forms. Incident history recorded.
+          Everything documented.</div>
       </div>
       <div class="diff-item">
         <svg class="diff-icon" viewBox="0 0 48 48" fill="none">
@@ -2079,7 +2103,8 @@
           <path d="M16 16v-4a8 8 0 0116 0v4" stroke="#C0151A" stroke-width="2" stroke-linecap="round" />
         </svg>
         <div class="diff-title">Legal security</div>
-        <div class="diff-desc">PJ contracts with protection clauses, confidentiality and clear conversion fees should you want to hire the professional directly.</div>
+        <div class="diff-desc">PJ contracts with protection clauses, confidentiality and clear conversion fees should
+          you want to hire the professional directly.</div>
       </div>
       <div class="diff-item">
         <svg class="diff-icon" viewBox="0 0 48 48" fill="none">
@@ -2096,7 +2121,8 @@
           <path d="M24 14v10l7 7" stroke="#C0151A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
         <div class="diff-title">24h response</div>
-        <div class="diff-desc">Any issue — from the professional or the client — is logged and handled the same day. No waiting for the next check-in.</div>
+        <div class="diff-desc">Any issue — from the professional or the client — is logged and handled the same day. No
+          waiting for the next check-in.</div>
       </div>
       <div class="diff-item">
         <svg class="diff-icon" viewBox="0 0 48 48" fill="none">
@@ -2115,7 +2141,8 @@
       <div>
         <div class="section-label">For Professionals</div>
         <h2 class="section-title">Are you a dev?<br>TKMaster<br>is your base.</h2>
-        <p class="section-sub">Work with top clients, have a point of contact that actually helps, and receive active career support — not just a payment spreadsheet.</p>
+        <p class="section-sub">Work with top clients, have a point of contact that actually helps, and receive active
+          career support — not just a payment spreadsheet.</p>
         <a href="talentos.html" class="btn-primary" style="margin-top: 8px; display: inline-block;">Register
           my profile</a>
         <p style="margin-top:12px; font-size:12px; color:var(--gray);">
@@ -2177,7 +2204,7 @@
   <footer>
     <div class="footer-grid">
       <div>
-        <a href="#start" class="footer-brand">
+        <a href="../en/index.html#start" class="footer-brand">
           <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
             <circle cx="18" cy="18" r="14" stroke="white" stroke-width="1.5" />
             <ellipse cx="18" cy="18" rx="7" ry="14" stroke="white" stroke-width="1.5" />
@@ -2190,9 +2217,9 @@
             <div class="logo-sub">Consulting and Systems</div>
           </div>
         </a>
-        <p class="footer-brand-desc">We connect companies with qualified IT professionals, with active management and impeccable documentation. Brazil.
+        <p class="footer-brand-desc">We connect companies to qualified IT professionals, with active management and
+          impeccable documentation. Brazil.
         <div class="footer-social">
-
           <!-- LinkedIn -->
           <a href="https://www.linkedin.com/company/tkmasterconsultorias/" target="_blank" class="social-link">
             <svg viewBox="0 0 24 24">
@@ -2242,7 +2269,7 @@
         <div class="footer-col-title">Company</div>
         <ul class="footer-links">
           <li><a href="#about">Why TKMaster</a></li>
-          <li><a href="vmv.html">Vision, Mission & Values</a></li>
+          <li><a href="../en/vmv.html">Vision, Mission and Values</a></li>
           <li><a href="#how-it-works">How It Works</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="../en/contact.html">Contact</a></li>
@@ -2260,10 +2287,21 @@
       <div>
         <div class="footer-col-title">For Professionals</div>
         <ul class="footer-links">
-          <li><a href="https://forms.gle/iVuhzTtGr4wwKFxN7" target="_blank" rel="noopener">Register your Profile</a></li>
-          <li><a href="../en/talents.html">Talent Pool</a></li>
+          <li><a href="https://forms.gle/iVuhzTtGr4wwKFxN7" target="_blank" rel="noopener">Register your Profile</a>
+          </li>
+          <li><a href="../en/talents.html#faq">FAQ</a></li>
           <li><a href="../en/talents.html#how-it-works">How PJ Contracting Works</a></li>
           <li><a href="../en/talents.html#guarantees">Career Plan</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Partners</div>
+        <ul class="footer-links">
+          <li><a href="../en/partner.html#commercial">Commercial Partner</a></li>
+          <li><a href="../en/partner.html#talent-acquisition">TA Partner</a></li>
+          <li><a href="../en/partner.html#how-it-works">How It Works</a></li>
+          <li><a href="https://forms.gle/vBxJqKkja9VjxKde8" target="_blank" rel="noopener">Commercial Form</a></li>
+          <li><a href="https://forms.gle/E4PeGkriQca4EjcC6" target="_blank" rel="noopener">TA Form</a></li>
         </ul>
       </div>
     </div>
@@ -2271,7 +2309,8 @@
       <div class="footer-copy">© 2026 <span>TKMaster</span> Consulting and Systems · Brazil</div>
       <div class="footer-copy">All rights reserved &nbsp;·&nbsp; <a href="../en/privacy.html">Privacy
           Policy</a>&nbsp;·&nbsp;
-        <a href="../en/terms.html" style="color:var(--red);text-decoration:none;">Terms of Use</a></div>
+        <a href="../en/terms.html" style="color:var(--red);text-decoration:none;">Terms of Use</a>
+      </div>
     </div>
   </footer>
 
