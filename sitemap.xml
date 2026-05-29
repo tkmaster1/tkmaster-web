@@ -23,6 +23,15 @@
   </url>
 
   <url>
+    <loc>https://www.tkmasters.com.br/parceiros.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.tkmasters.com.br/parceiros.html"/>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://www.tkmasters.com.br/en/partner.html"/>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
     <loc>https://www.tkmasters.com.br/contato.html</loc>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.tkmasters.com.br/contato.html"/>
     <xhtml:link rel="alternate" hreflang="en"    href="https://www.tkmasters.com.br/en/contact.html"/>
@@ -74,6 +83,15 @@
     <xhtml:link rel="alternate" hreflang="en"    href="https://www.tkmasters.com.br/en/talents.html"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.tkmasters.com.br/talentos.html"/>
     <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.tkmasters.com.br/en/partner.html</loc>
+    <xhtml:link rel="alternate" hreflang="en"    href="https://www.tkmasters.com.br/en/partner.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.tkmasters.com.br/parceiros.html"/>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>

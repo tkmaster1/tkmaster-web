@@ -10,6 +10,7 @@
 |---|---|
 | `index.html` | Homepage — serviços, como funciona, diferenciais e CTA |
 | `talentos.html` | Banco de talentos — cadastro para profissionais PJ |
+| `parceiros.html` | Página de parceria — Parceiro Comercial e Parceiro TA |
 | `contato.html` | Contato para empresas e profissionais |
 | `vmv.html` | Visão, Missão e Valores |
 | `privacidade.html` | Política de Privacidade (LGPD) |
@@ -22,6 +23,7 @@
 |---|---|
 | `en/index.html` | Homepage — English version |
 | `en/talents.html` | Talent pool — registration for PJ professionals |
+| `en/partner.html` | Partner page — Commercial Partner and TA Partner |
 | `en/contact.html` | Contact for companies and professionals |
 | `en/vmv.html` | Vision, Mission & Values |
 | `en/privacy.html` | Privacy Policy (LGPD) |
@@ -80,6 +82,8 @@ O site é bilíngue com seletor `PT · EN` no nav de todas as páginas.
 
 > **Regra de cor de seções:** a última seção antes do rodapé nunca pode ser navy (`#0B1D3A`), pois o rodapé também é navy. Usar vermelho (`#C0151A`) como fundo nas seções CTA finais.
 
+> **Alternância de seções em `parceiros.html` / `partner.html`:** Comercial (branco) → TA (navy) → Como Funciona (branco) → Modelo (navy) → FAQ (branco) → CTA (vermelho).
+
 ---
 
 ## ⚙️ Configuração no servidor
@@ -117,6 +121,7 @@ Após publicar, cadastre o sitemap em:
 /
 ├── index.html
 ├── talentos.html
+├── parceiros.html          ← novo
 ├── contato.html
 ├── vmv.html
 ├── privacidade.html
@@ -131,6 +136,7 @@ Após publicar, cadastre o sitemap em:
 └── en/
     ├── index.html
     ├── talents.html
+    ├── partner.html        ← novo
     ├── contact.html
     ├── vmv.html
     ├── privacy.html
@@ -183,6 +189,42 @@ Após publicar, cadastre o sitemap em:
 | `#stacks` | `#stacks` | Stacks com demanda ativa |
 | `#cadastro` | `#register` | CTA de cadastro |
 
+### PT/EN — `parceiros.html` / `en/partner.html`
+| PT ID | EN ID | Seção |
+|---|---|---|
+| `#comercial` | `#commercial` | Parceiro Comercial |
+| `#talent-acquisition` | `#talent-acquisition` | Parceiro TA |
+| `#como-funciona` | `#how-it-works` | Como funciona |
+| `#modelo` | `#model` | Modelo de parceria |
+| `#faq` | `#faq` | Perguntas frequentes |
+| `#inscrever` | `#sign-up` | CTA final |
+
+---
+
+## 🧩 Componentes globais
+
+### Menu Institucional (dropdown)
+Presente no nav de todas as páginas. Abre ao hover ou clique, fecha com delay de 200ms para permitir movimento do mouse. Itens: Por que TKMaster · Visão, Missão e Valores · Seja Parceiro · Fale Conosco.
+
+### Rodapé — 5 colunas
+Todas as páginas têm o rodapé com `grid-template-columns: 2fr 1fr 1fr 1fr 1fr`:
+
+| Coluna | Conteúdo |
+|---|---|
+| 1 | Logo + descrição + redes sociais |
+| 2 | Empresa |
+| 3 | Para Empresas |
+| 4 | Para Profissionais |
+| 5 | Parceiros ← novo |
+
+> Para adicionar a coluna Parceiros em páginas existentes: (1) alterar o CSS de `2fr 1fr 1fr 1fr` para `2fr 1fr 1fr 1fr 1fr`; (2) colar o bloco `<div>Parceiros...</div>` após o bloco "Para Profissionais" dentro de `.footer-grid`.
+
+### WhatsApp FAB
+Botão flutuante verde fixo no canto inferior direito. Embutido antes de `</body>` em todas as páginas. Sobe automaticamente quando o cookie banner está visível.
+
+### Cookie banner
+Banner LGPD fixo no rodapé com animação de slide-up. Armazena consentimento no `localStorage` por 365 dias. Texto em PT nas páginas PT, em inglês nas páginas EN.
+
 ---
 
 ## 📋 Status
@@ -191,19 +233,25 @@ Após publicar, cadastre o sitemap em:
 |---|---|
 | Páginas principais PT | ✅ Concluído |
 | Páginas EN (`/en/`) | ✅ Concluído |
+| Página de Parceiros PT (`parceiros.html`) | ✅ Concluído |
+| Página de Parceiros EN (`en/partner.html`) | ✅ Concluído |
 | Seletor PT · EN no nav | ✅ Concluído |
+| Menu Institucional (dropdown) | ✅ Concluído |
+| Rodapé 5 colunas com coluna Parceiros | ✅ Concluído |
 | Design responsivo | ✅ Concluído |
 | Meta tags + OG tags (PT e EN) | ✅ Concluído |
+| Twitter Card + hreflang (PT e EN) | ✅ Concluído |
 | Cookie banner (LGPD) PT e EN | ✅ Concluído |
+| Botão WhatsApp flutuante | ✅ Concluído |
 | Política de Privacidade | ✅ Concluído |
 | Termos de Uso | ✅ Concluído |
 | Página 404 personalizada PT e EN | ✅ Concluído |
 | SEO (sitemap + robots.txt) | ✅ Concluído |
-| Botão WhatsApp flutuante | ✅ Concluído |
 | Âncoras individuais por serviço | ✅ Concluído |
+| Sitemap atualizado com URLs de parceiros | 🔲 Pendente |
+| Coluna Parceiros no footer das demais páginas | 🔲 Pendente |
 | Domínio e hospedagem | 🔲 Pendente |
 | Google Search Console | 🔲 Pendente |
-| Sitemap atualizado com URLs EN | 🔲 Pendente |
 
 ---
 
