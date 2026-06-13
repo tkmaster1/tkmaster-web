@@ -1460,7 +1460,7 @@
 
   <!-- ── NAV ── -->
   <nav>
-    <a href="#inicio" class="nav-logo">
+    <a href="index.html" class="nav-logo">
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
         <circle cx="18" cy="18" r="14" stroke="white" stroke-width="1.5" />
         <ellipse cx="18" cy="18" rx="7" ry="14" stroke="white" stroke-width="1.5" />
@@ -1571,6 +1571,92 @@
       if (!e.target.closest('nav')) { closeMenu(); }
     });
   </script>
+
+<!-- ════════ BANNER: Torcemos pelo Brasil (entre o menu e a Hero) ════════ -->
+<style>
+  .brz-band{position:relative;overflow:hidden;
+    background:linear-gradient(180deg,#0B1D3A 0%,#102449 100%);
+    border-top:3px solid transparent;
+    border-image:linear-gradient(90deg,#1EA85A 0%,#F5C542 100%) 1;
+    padding:clamp(40px,6vw,66px) clamp(20px,6vw,80px);}
+  .brz-deco{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
+  .brz-deco span{position:absolute;border-radius:50%;}
+  .brz-c1{width:520px;height:520px;top:-170px;right:-130px;border:1px solid rgba(30,168,90,0.14);}
+  .brz-c2{width:320px;height:320px;top:-40px;right:50px;border:1px solid rgba(245,197,66,0.12);}
+  .brz-inner{position:relative;max-width:1180px;margin:0 auto;display:grid;
+    grid-template-columns:1.12fr 0.88fr;gap:clamp(28px,5vw,64px);align-items:center;}
+  .brz-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-body);
+    font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;
+    color:#F5C542;margin-bottom:20px;}
+  .brz-eyebrow::before{content:'';width:26px;height:2px;
+    background:linear-gradient(90deg,#1EA85A,#F5C542);}
+  .brz-title{font-family:var(--font-display);font-weight:900;
+    font-size:clamp(30px,4.3vw,50px);line-height:0.98;letter-spacing:-0.01em;
+    color:#fff;text-transform:uppercase;margin-bottom:18px;}
+  .brz-grad{background:linear-gradient(90deg,#1EA85A 0%,#F5C542 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;}
+  .brz-desc{font-family:var(--font-body);font-size:clamp(15px,1.5vw,17px);
+    line-height:1.6;color:#C9D2E0;max-width:48ch;margin-bottom:12px;}
+  .brz-slogan{font-family:var(--font-body);font-size:clamp(14px,1.4vw,16px);
+    color:#9FB0C6;margin-bottom:26px;}
+  .brz-slogan strong{color:#fff;font-weight:600;}
+  .brz-cta{box-shadow:0 8px 22px rgba(192,21,26,0.22);}
+  .brz-right{display:flex;justify-content:center;}
+  .brz-art{width:100%;max-width:420px;height:auto;}
+  .brz-node{transform-box:fill-box;transform-origin:center;animation:brzPulse 3.2s ease-in-out infinite;}
+  .brz-node.b{animation-delay:1.05s;} .brz-node.c{animation-delay:2.1s;}
+  @keyframes brzPulse{0%,100%{opacity:.45}50%{opacity:1}}
+  @media (max-width:860px){
+    .brz-inner{grid-template-columns:1fr;}
+    .brz-right{order:-1;max-width:320px;margin:0 0 6px;}
+  }
+  @media (prefers-reduced-motion:reduce){.brz-node{animation:none}}
+</style>
+
+<section class="brz-band" aria-label="Torcemos pelo Brasil">
+  <div class="brz-deco"><span class="brz-c1"></span><span class="brz-c2"></span></div>
+  <div class="brz-inner">
+    <div class="brz-left">
+      <div class="brz-eyebrow">🇧🇷 Torcemos pelo Brasil</div>
+      <h2 class="brz-title">Talento, estratégia e <span class="brz-grad">trabalho em equipe</span>.</h2>
+      <p class="brz-desc">Assim como no futebol, grandes resultados são construídos por pessoas comprometidas, preparadas e alinhadas com um objetivo em comum.</p>
+      <p class="brz-slogan">TKMaster. TI com pessoas. <strong>Parceria de verdade.</strong></p>
+      <a href="#servicos" class="btn-primary brz-cta">Conheça nossos serviços</a>
+    </div>
+    <div class="brz-right">
+      <svg class="brz-art" viewBox="0 0 440 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bandeira do Brasil estilizada em rede tecnológica com bola de futebol">
+        <rect x="34" y="28" width="372" height="304" rx="18" stroke="#1EA85A" stroke-width="1.4" fill="rgba(30,168,90,0.04)"/>
+        <path d="M220 52 L398 180 L220 308 L42 180 Z" stroke="#F5C542" stroke-width="1.4" fill="rgba(245,197,66,0.05)" stroke-linejoin="round"/>
+        <g stroke="#33507F" stroke-width="1">
+          <line x1="220" y1="52" x2="220" y2="118"/><line x1="398" y1="180" x2="298" y2="180"/>
+          <line x1="220" y1="308" x2="220" y2="242"/><line x1="42" y1="180" x2="142" y2="180"/>
+        </g>
+        <g fill="#F5C542"><circle cx="220" cy="52" r="4"/><circle cx="398" cy="180" r="4"/><circle cx="220" cy="308" r="4"/><circle cx="42" cy="180" r="4"/></g>
+        <circle cx="220" cy="180" r="62" fill="#101F3D" stroke="#1EA85A" stroke-width="1.4"/>
+        <path d="M168 158 Q220 196 272 158" stroke="#E9EEF6" stroke-width="1.2" fill="none" opacity="0.7"/>
+        <path d="M170 167 Q220 205 270 167" stroke="#E9EEF6" stroke-width="0.8" fill="none" opacity="0.32"/>
+        <g stroke="#3C5C8C" stroke-width="1" fill="none">
+          <polygon points="220,150 243,167 234,194 206,194 197,167" stroke="#F5C542" stroke-width="1.1" fill="rgba(245,197,66,0.06)"/>
+          <line x1="220" y1="150" x2="220" y2="124"/><line x1="243" y1="167" x2="270" y2="158"/>
+          <line x1="234" y1="194" x2="252" y2="214"/><line x1="206" y1="194" x2="188" y2="214"/><line x1="197" y1="167" x2="170" y2="158"/>
+        </g>
+        <g fill="#1EA85A"><circle class="brz-node" cx="220" cy="124" r="3.4"/><circle class="brz-node c" cx="252" cy="214" r="3.4"/></g>
+        <g fill="#F5C542"><circle class="brz-node b" cx="270" cy="158" r="3.4"/><circle class="brz-node" cx="188" cy="214" r="3"/></g>
+        <g fill="#E9EEF6"><circle class="brz-node b" cx="170" cy="158" r="3"/></g>
+        <g fill="#F5C542"><circle cx="220" cy="150" r="2.4"/><circle cx="243" cy="167" r="2.4"/><circle cx="234" cy="194" r="2.4"/><circle cx="206" cy="194" r="2.4"/><circle cx="197" cy="167" r="2.4"/></g>
+        <g transform="translate(346,252)">
+          <circle r="26" fill="#0E1E3B" stroke="#E9EEF6" stroke-width="1.2"/>
+          <polygon points="0,-9 9,-2 6,9 -6,9 -9,-2" fill="#13294d" stroke="#E9EEF6" stroke-width="1"/>
+          <g stroke="#E9EEF6" stroke-width="1">
+            <line x1="0" y1="-9" x2="0" y2="-22"/><line x1="9" y1="-2" x2="22" y2="-7"/><line x1="6" y1="9" x2="14" y2="20"/><line x1="-6" y1="9" x2="-14" y2="20"/><line x1="-9" y1="-2" x2="-22" y2="-7"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+<!-- ════════ /BANNER ════════ -->
+
 
   <!-- ── HERO ── -->
   <section class="hero" id="inicio">
